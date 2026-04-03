@@ -254,11 +254,371 @@ const unit3CompleteQuiz = [
   },
 ];
 
+const unit1CompleteQuiz = [
+  {
+    id: 'u1-cq-01',
+    question: 'The changing nature of software means software is:',
+    options: ['Always fixed', 'Constantly evolving', 'Never updated', 'Only hardware-based'],
+    correctAnswer: 1,
+    explanation: 'Software changes with user needs and technology.',
+  },
+  {
+    id: 'u1-cq-02',
+    question: 'Software engineering mainly helps in:',
+    options: ['Building software systematically', 'Selling hardware', 'Drawing only diagrams', 'Reducing electricity use'],
+    correctAnswer: 0,
+    explanation: 'It provides a proper way to develop software.',
+  },
+  {
+    id: 'u1-cq-03',
+    question: 'In the layered technology approach, the foundation is:',
+    options: ['Tools', 'Methods', 'Quality focus', 'Testing'],
+    correctAnswer: 2,
+    explanation: 'Quality focus is the base of software engineering.',
+  },
+  {
+    id: 'u1-cq-04',
+    question: 'Which is a layer of software engineering?',
+    options: ['Quality focus', 'Printer', 'Keyboard', 'Internet cable'],
+    correctAnswer: 0,
+    explanation: 'Quality focus is one important layer.',
+  },
+  {
+    id: 'u1-cq-05',
+    question: 'A process framework in software engineering provides:',
+    options: ['Random activities', 'Structured development steps', 'Only coding rules', 'Only design colors'],
+    correctAnswer: 1,
+    explanation: 'It organizes development activities step by step.',
+  },
+  {
+    id: 'u1-cq-06',
+    question: 'Project tracking and control are used to:',
+    options: ['Ignore project progress', 'Monitor and manage project work', 'Remove developers', 'Avoid deadlines'],
+    correctAnswer: 1,
+    explanation: 'Tracking checks progress and control manages issues.',
+  },
+  {
+    id: 'u1-cq-07',
+    question: 'CMMI stands for:',
+    options: [
+      'Computer Method Management Integration',
+      'Capability Maturity Model Integration',
+      'Coding Maturity Method Index',
+      'Control Method Model Integration',
+    ],
+    correctAnswer: 1,
+    explanation: 'CMMI is the full form.',
+  },
+  {
+    id: 'u1-cq-08',
+    question: 'CMMI is mainly used to improve:',
+    options: ['Software process quality', 'Hardware speed', 'Screen brightness', 'Network wires'],
+    correctAnswer: 0,
+    explanation: 'CMMI improves process maturity and quality.',
+  },
+  {
+    id: 'u1-cq-09',
+    question: 'Process patterns are:',
+    options: [
+      'Repeated solutions for process problems',
+      'Hardware parts',
+      'Testing bugs',
+      'User manuals',
+    ],
+    correctAnswer: 0,
+    explanation: 'Process patterns give reusable process solutions.',
+  },
+  {
+    id: 'u1-cq-10',
+    question: 'Process assessment is used to:',
+    options: ['Check process effectiveness', 'Install software', 'Draw class diagrams', 'Create advertisements'],
+    correctAnswer: 0,
+    explanation: 'It evaluates how good the process is.',
+  },
+  {
+    id: 'u1-cq-11',
+    question: 'PSP stands for:',
+    options: ['Personal Software Process', 'Process Software Program', 'Project System Plan', 'Personal System Pattern'],
+    correctAnswer: 0,
+    explanation: 'PSP means Personal Software Process.',
+  },
+  {
+    id: 'u1-cq-12',
+    question: 'TSP stands for:',
+    options: ['Team Software Process', 'Testing System Process', 'Technical Software Plan', 'Team System Pattern'],
+    correctAnswer: 0,
+    explanation: 'TSP means Team Software Process.',
+  },
+  {
+    id: 'u1-cq-13',
+    question: 'Personal Software Process mainly focuses on:',
+    options: [
+      'Individual developer improvement',
+      'Only customer meetings',
+      'Only hardware testing',
+      'Market research',
+    ],
+    correctAnswer: 0,
+    explanation: 'PSP improves the work of individual developers.',
+  },
+  {
+    id: 'u1-cq-14',
+    question: 'Team Software Process mainly focuses on:',
+    options: ['Team coordination and quality work', 'Only coding alone', 'Only documentation', 'Only deployment'],
+    correctAnswer: 0,
+    explanation: 'TSP supports teamwork and disciplined development.',
+  },
+  {
+    id: 'u1-cq-15',
+    question: 'Waterfall model follows:',
+    options: ['Random development', 'Sequential phases', 'Only testing', 'Only coding'],
+    correctAnswer: 1,
+    explanation: 'Waterfall moves step by step in order.',
+  },
+  {
+    id: 'u1-cq-16',
+    question: 'Incremental model delivers software in:',
+    options: ['One final step only', 'Small usable parts', 'Hardware modules', 'Random updates'],
+    correctAnswer: 1,
+    explanation: 'Incremental model gives software piece by piece.',
+  },
+  {
+    id: 'u1-cq-17',
+    question: 'RAD model is mainly known for:',
+    options: ['Slow delivery', 'Rapid development', 'No planning', 'Only maintenance'],
+    correctAnswer: 1,
+    explanation: 'RAD focuses on fast development.',
+  },
+  {
+    id: 'u1-cq-18',
+    question: 'Prototype model is useful when:',
+    options: ['Requirements are unclear', 'Project is finished', 'Hardware is broken', 'No users exist'],
+    correctAnswer: 0,
+    explanation: 'Prototyping helps clarify user requirements.',
+  },
+  {
+    id: 'u1-cq-19',
+    question: 'Spiral model mainly combines:',
+    options: [
+      'Risk analysis with development',
+      'Only coding and printing',
+      'Only testing and selling',
+      'Hardware and networking',
+    ],
+    correctAnswer: 0,
+    explanation: 'Spiral model is risk-driven.',
+  },
+  {
+    id: 'u1-cq-20',
+    question: 'Process technology theories mainly help to:',
+    options: [
+      'Understand and improve software processes',
+      'Buy new computers',
+      'Change monitor size',
+      'Avoid documentation',
+    ],
+    correctAnswer: 0,
+    explanation: 'They focus on improving development processes.',
+  },
+];
+
+const unit2CompleteQuiz = [
+  {
+    id: 'u2-cq-01',
+    question: 'Software engineering core principles mainly help to:',
+    options: ['Increase software size', 'Build software properly', 'Avoid planning', 'Remove users'],
+    correctAnswer: 1,
+    explanation: 'Core principles guide proper software development.',
+  },
+  {
+    id: 'u2-cq-02',
+    question: 'Communication in software engineering is mainly used to:',
+    options: ['Decorate software', 'Understand customer needs', 'Reduce coding speed', 'Delete requirements'],
+    correctAnswer: 1,
+    explanation: 'Communication helps understand the real problem.',
+  },
+  {
+    id: 'u2-cq-03',
+    question: 'Planning in software engineering includes:',
+    options: ['Only coding', 'Time, cost, and resources', 'Only testing', 'Only design color'],
+    correctAnswer: 1,
+    explanation: 'Planning decides schedule, budget, and resources.',
+  },
+  {
+    id: 'u2-cq-04',
+    question: 'Modelling means:',
+    options: ['Selling software', 'Creating a representation before coding', 'Installing software', 'Writing final report'],
+    correctAnswer: 1,
+    explanation: 'Modelling shows the system before implementation.',
+  },
+  {
+    id: 'u2-cq-05',
+    question: 'Construction principle mainly includes:',
+    options: ['Coding and testing', 'Only requirement gathering', 'Only user training', 'Only deployment'],
+    correctAnswer: 0,
+    explanation: 'Construction turns design into working code.',
+  },
+  {
+    id: 'u2-cq-06',
+    question: 'Deployment means:',
+    options: [
+      'Writing requirements',
+      'Delivering software for real use',
+      'Drawing diagrams',
+      'Creating classes only',
+    ],
+    correctAnswer: 1,
+    explanation: 'Deployment makes software available to users.',
+  },
+  {
+    id: 'u2-cq-07',
+    question: 'Requirements Engineering answers:',
+    options: [
+      'Who will sell software?',
+      'What should the software do?',
+      'What color should software be?',
+      'Where to buy hardware?',
+    ],
+    correctAnswer: 1,
+    explanation: 'It focuses on user and system needs.',
+  },
+  {
+    id: 'u2-cq-08',
+    question: 'The first step in the requirement process is to:',
+    options: ['Start coding', 'Understand the problem', 'Deploy the system', 'Remove stakeholders'],
+    correctAnswer: 1,
+    explanation: 'Requirement work starts by understanding the problem.',
+  },
+  {
+    id: 'u2-cq-09',
+    question: 'Stakeholders are:',
+    options: ['Only programmers', 'People affected by the system', 'Only customers', 'Only testers'],
+    correctAnswer: 1,
+    explanation: 'Stakeholders include all affected people.',
+  },
+  {
+    id: 'u2-cq-10',
+    question: 'Software analysis is done to:',
+    options: ['Sell the product', 'Understand requirements deeply', 'Print reports', 'Train users'],
+    correctAnswer: 1,
+    explanation: 'Analysis studies what the system must do.',
+  },
+  {
+    id: 'u2-cq-11',
+    question: 'An analysis model helps by:',
+    options: [
+      'Increasing confusion',
+      'Showing system functions clearly',
+      'Replacing coding',
+      'Removing testing',
+    ],
+    correctAnswer: 1,
+    explanation: 'It gives a clear structured view of requirements.',
+  },
+  {
+    id: 'u2-cq-12',
+    question: 'In data modelling, a real-world object is called:',
+    options: ['Attribute', 'Entity', 'Method', 'Process'],
+    correctAnswer: 1,
+    explanation: 'Entity means the object about which data is stored.',
+  },
+  {
+    id: 'u2-cq-13',
+    question: 'In data modelling, a property of an entity is called:',
+    options: ['Relationship', 'Method', 'Attribute', 'Class'],
+    correctAnswer: 2,
+    explanation: 'Attributes describe an entity.',
+  },
+  {
+    id: 'u2-cq-14',
+    question: 'Object-Oriented Analysis focuses on:',
+    options: ['Objects and classes', 'Only hardware', 'Only data flow', 'Only deployment'],
+    correctAnswer: 0,
+    explanation: 'OOA studies classes, objects, and relationships.',
+  },
+  {
+    id: 'u2-cq-15',
+    question: 'A flow-oriented model mainly shows:',
+    options: ['Color design', 'Data movement in the system', 'Salary details', 'Only class names'],
+    correctAnswer: 1,
+    explanation: 'It explains how data flows through processes.',
+  },
+  {
+    id: 'u2-cq-16',
+    question: 'A class-based model focuses on the:',
+    options: [
+      'Dynamic behavior only',
+      'Static structure of the system',
+      'User training process',
+      'Final installation',
+    ],
+    correctAnswer: 1,
+    explanation: 'Class-based model shows classes and relationships.',
+  },
+  {
+    id: 'u2-cq-17',
+    question: 'Behavioural model shows:',
+    options: [
+      'Database tables only',
+      'How the system reacts to events',
+      'Only module names',
+      'Only coding rules',
+    ],
+    correctAnswer: 1,
+    explanation: 'It explains dynamic system behavior.',
+  },
+  {
+    id: 'u2-cq-18',
+    question: 'Which is a software design approach?',
+    options: ['Top-down design', 'Recovery testing', 'Beta testing', 'Debugging'],
+    correctAnswer: 0,
+    explanation: 'Top-down is a standard design approach.',
+  },
+  {
+    id: 'u2-cq-19',
+    question: 'Modularity means:',
+    options: [
+      'Making software bigger',
+      'Dividing software into smaller parts',
+      'Removing classes',
+      'Avoiding design',
+    ],
+    correctAnswer: 1,
+    explanation: 'Modularity breaks software into manageable modules.',
+  },
+  {
+    id: 'u2-cq-20',
+    question: 'Pattern-based design uses:',
+    options: [
+      'Random coding ideas',
+      'Reusable design solutions',
+      'Only testing methods',
+      'Only user feedback',
+    ],
+    correctAnswer: 1,
+    explanation: 'Design patterns are proven reusable solutions.',
+  },
+];
+
 export const units = [1, 2, 3, 4, 5].map((number) => ({
   id: String(number),
-  title: number === 3 ? 'Unit 3: Software Testing Basics' : `Unit ${number}`,
+  title:
+    number === 1
+      ? 'Unit 1: Introduction to Software Engineering'
+      : number === 2
+      ? 'Unit 2: Software Development Activities'
+      : number === 3
+        ? 'Unit 3: Software Testing Basics'
+        : `Unit ${number}`,
   description: `Placeholder summary for Unit ${number}. Replace with your exact syllabus topics, outcomes, and priorities.`,
-  completeQuiz: number === 3 ? unit3CompleteQuiz : makeQuiz(number, 'complete'),
+  completeQuiz:
+    number === 1
+      ? unit1CompleteQuiz
+      : number === 2
+        ? unit2CompleteQuiz
+        : number === 3
+          ? unit3CompleteQuiz
+          : makeQuiz(number, 'complete'),
   pyqQuiz: makeQuiz(number, 'pyq'),
   cheatSheet: makeCheatSheet(number),
 }));

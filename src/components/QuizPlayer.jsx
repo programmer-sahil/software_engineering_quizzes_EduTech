@@ -93,6 +93,7 @@ function QuizPlayer({ title, questions }) {
           <div className="mt-4 grid gap-3">
             {currentQuestion.options.map((option, index) => {
               const isSelected = selected === index;
+              const optionLabel = String.fromCharCode(65 + index);
               return (
                 <button
                   key={option}
@@ -104,7 +105,16 @@ function QuizPlayer({ title, questions }) {
                       : 'border-white/10 bg-slate-900/60 text-slate-200 hover:border-accent/40'
                   }`}
                 >
-                  {option}
+                  <span className="inline-flex items-center gap-3">
+                    <span
+                      className={`grid h-6 w-6 place-items-center rounded-full border text-xs font-semibold ${
+                        isSelected ? 'border-accent/70 bg-accent/20 text-accent' : 'border-white/20 text-slate-300'
+                      }`}
+                    >
+                      {optionLabel}
+                    </span>
+                    <span>{option}</span>
+                  </span>
                 </button>
               );
             })}

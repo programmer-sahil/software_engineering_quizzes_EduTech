@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, PhoneCall } from 'lucide-react';
+import { ArrowRight, Braces, Cpu, Database, GitBranch, PhoneCall } from 'lucide-react';
 import { BRAND } from '../data/units';
 import Button from '../components/ui/Button';
 import ThreeDBackgroundScene from '../components/ThreeDBackgroundScene';
+
+const techIcons = [
+  { title: 'Algorithms', Icon: Cpu },
+  { title: 'Code Logic', Icon: Braces },
+  { title: 'Databases', Icon: Database },
+  { title: 'Version Control', Icon: GitBranch },
+];
 
 function HeroSection() {
   return (
@@ -44,6 +51,24 @@ function HeroSection() {
                 Contact Now: {BRAND.contact}
               </Button>
             </a>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {techIcons.map(({ title, Icon }, index) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + index * 0.08, duration: 0.35 }}
+                whileHover={{ y: -5, rotateX: 8, rotateY: -8 }}
+                className="icon-3d-card glass rounded-xl p-3 text-left"
+              >
+                <div className="inline-flex rounded-lg border border-accent/35 bg-accent/10 p-2 text-accent">
+                  <Icon size={16} />
+                </div>
+                <p className="mt-2 text-xs font-semibold tracking-wide text-slate-200">{title}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>

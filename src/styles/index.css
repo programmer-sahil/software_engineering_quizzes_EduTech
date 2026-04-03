@@ -41,3 +41,53 @@ body {
 .section-shell {
   @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
+
+.icon-3d-card {
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.14);
+}
+
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  color: #0f172a;
+  background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.96), rgba(241, 245, 249, 1));
+}
+
+html.light .bg-mesh-dark {
+  background-image: radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.22), transparent 35%),
+    radial-gradient(circle at 80% 10%, rgba(244, 63, 94, 0.16), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.2), transparent 42%);
+}
+
+html.light .glass {
+  border-color: rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+html.light .grid-overlay {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+}
+
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-300,
+html.light .text-slate-200 {
+  color: #334155 !important;
+}
+
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/50 {
+  background-color: rgba(255, 255, 255, 0.65) !important;
+}
