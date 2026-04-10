@@ -19,15 +19,6 @@ function QuizPlayer({ title, questions }) {
     [answers]
   );
 
-  const liveScore = useMemo(() => {
-    if (answeredCount === 0) return 0;
-    let score = 0;
-    for (let i = 0; i < questions.length; i += 1) {
-      if (answers[i] === questions[i].correctAnswer) score += 1;
-    }
-    return Math.round((score / questions.length) * 100);
-  }, [answers, answeredCount, questions]);
-
   const chooseAnswer = (optionIndex) => {
     setAnswers((prev) => ({ ...prev, [currentIndex]: optionIndex }));
   };
@@ -72,12 +63,7 @@ function QuizPlayer({ title, questions }) {
         </button>
       </div>
 
-      <QuizProgress
-        currentIndex={currentIndex}
-        total={questions.length}
-        answered={answeredCount}
-        scorePercent={liveScore}
-      />
+      <QuizProgress currentIndex={currentIndex} total={questions.length} answered={answeredCount} />
 
       <AnimatePresence mode="wait">
         <motion.div

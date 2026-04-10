@@ -16,6 +16,15 @@ function UnitPage() {
     () => units.find((item) => item.id === unitId || `unit-${item.id}` === unitId),
     [unitId]
   );
+  const modeDescription = useMemo(() => {
+    if (activeMode === 'complete-quiz') {
+      return 'Master this unit with a curated full-syllabus challenge designed for accuracy, speed, and exam confidence.';
+    }
+    if (activeMode === 'pyq-quiz') {
+      return 'Train with previous-year style questions to sharpen pattern recognition and maximize scoring strategy.';
+    }
+    return 'Revise high-impact concepts, formulas, and answer frameworks crafted for quick retention before tests.';
+  }, [activeMode]);
 
   if (!unit) {
     return (
@@ -40,9 +49,7 @@ function UnitPage() {
             {activeMode === 'pyq-quiz' && 'PYQ Quiz'}
             {activeMode === 'cheat-sheet' && 'Cheat Sheet'}
           </h2>
-          <p className="mt-2 text-sm text-slate-300">
-            Placeholder content is active now. You can replace each dataset later from `src/data/units.js`.
-          </p>
+          <p className="mt-2 text-sm text-slate-300">{modeDescription}</p>
 
           <div className="mt-6">
             {activeMode === 'complete-quiz' && (

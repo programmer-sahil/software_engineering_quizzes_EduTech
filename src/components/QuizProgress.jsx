@@ -1,4 +1,4 @@
-function QuizProgress({ currentIndex, total, answered, scorePercent }) {
+function QuizProgress({ currentIndex, total, answered }) {
   const progress = ((currentIndex + 1) / total) * 100;
 
   return (
@@ -10,9 +10,6 @@ function QuizProgress({ currentIndex, total, answered, scorePercent }) {
         <div className="flex items-center gap-2">
           <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
             Answered: {answered}/{total}
-          </span>
-          <span className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs text-accent">
-            Score: {scorePercent}%
           </span>
         </div>
       </div>
