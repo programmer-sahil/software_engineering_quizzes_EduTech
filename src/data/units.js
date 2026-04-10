@@ -106,6 +106,458 @@ const makeCheatSheet = (unitNumber) => [
   },
 ];
 
+const unit1CheatSheet = [
+  {
+    id: 'u1-cs-01',
+    heading: 'Unit 1 Cheat Sheet - Introduction to Software Engineering',
+    keyTerms: ['Software Engineering', 'Quality', 'Process', 'Evolution'],
+    points: [
+      'Software is used in banking, health, education, business, and transport.',
+      'Modern software must be reliable, maintainable, scalable, and secure.',
+      'Software changes due to new needs, technology updates, bug fixes, and feature additions.',
+      'Software evolves continuously throughout its lifecycle.',
+    ],
+    quickBox: 'Exam Focus: Begin answers with definition, then explain need, quality goals, and one real-world example.',
+  },
+  {
+    id: 'u1-cs-02',
+    heading: 'Software Engineering Basics',
+    keyTerms: ['Systematic', 'Disciplined', 'Measurable', 'Budget'],
+    points: [
+      'Software Engineering is a systematic, disciplined, and measurable approach to software development.',
+      'Primary goal: build quality software on time and within budget.',
+      'A good process reduces rework, delays, and project risk.',
+    ],
+    quickBox: 'Write in exam: "Right software + Right time + Right cost + Right quality."',
+  },
+  {
+    id: 'u1-cs-03',
+    heading: 'Layered Technology Approach',
+    keyTerms: ['Quality Focus', 'Process', 'Methods', 'Tools'],
+    points: [
+      'Quality Focus: foundation for all engineering activities.',
+      'Process: framework that organizes development work.',
+      'Methods: technical how-to for analysis, design, coding, and testing.',
+      'Tools: automated or semi-automated support for process and methods.',
+    ],
+    quickBox: 'Memory Hook: Quality -> Process -> Methods -> Tools.',
+  },
+  {
+    id: 'u1-cs-04',
+    heading: 'Process Framework Activities',
+    keyTerms: ['Communication', 'Planning', 'Modelling', 'Construction', 'Deployment'],
+    points: [
+      'Communication: gather and clarify customer requirements.',
+      'Planning: estimate effort, schedule tasks, and allocate resources.',
+      'Modelling: create analysis and design representations.',
+      'Construction: coding plus testing activities.',
+      'Deployment: deliver software, collect feedback, and improve.',
+    ],
+    quickBox: 'Framework Flow: Communication -> Planning -> Modelling -> Construction -> Deployment.',
+  },
+  {
+    id: 'u1-cs-05',
+    heading: 'Project Control, Maturity, and Team Discipline',
+    keyTerms: ['Tracking', 'Control', 'CMMI', 'PSP', 'TSP'],
+    points: [
+      'Project tracking and control monitors progress, compares with plan, and controls delay/cost.',
+      'CMMI (Capability Maturity Model Integration) improves process maturity and software quality.',
+      'Process patterns are reusable process solutions for common project situations.',
+      'Process assessment evaluates process effectiveness and improvement needs.',
+      'PSP = Personal Software Process (individual discipline).',
+      'TSP = Team Software Process (team-level planning and quality discipline).',
+      'Process technology combines methods, tools, and techniques to improve software processes.',
+    ],
+    quickBox: 'Remember: PSP is individual-focused, TSP is team-focused, CMMI is organization maturity-focused.',
+  },
+  {
+    id: 'u1-cs-06',
+    heading: 'Process Models at a Glance',
+    keyTerms: ['Waterfall', 'Incremental', 'RAD', 'Prototype', 'Spiral'],
+    points: [
+      'Waterfall: sequential phases executed step-by-step.',
+      'Incremental: software delivered in small usable parts.',
+      'RAD: emphasizes rapid development and quick delivery.',
+      'Prototype: useful when requirements are unclear.',
+      'Spiral: risk-driven model with iterative refinement.',
+    ],
+    quickBox:
+      'Quick Revision Box: Software engineering = disciplined development | CMMI improves process maturity | PSP = individual | TSP = team | Waterfall = sequential | Spiral = risk-based',
+  },
+];
+
+const unit2CheatSheet = [
+  {
+    id: 'u2-cs-01',
+    heading: 'Unit 2 Cheat Sheet - Software Development Activities',
+    keyTerms: ['Core Principles', 'Planning', 'Testing', 'Documentation'],
+    points: [
+      'Understand the problem clearly before writing any solution.',
+      'Plan first, then implement with milestones.',
+      'Divide work into modules for easier development and maintenance.',
+      'Keep design simple and easy to understand.',
+      'Test continuously and prepare for requirement changes.',
+      'Maintain documentation throughout the project lifecycle.',
+    ],
+    quickBox: 'Core Rule: Understand -> Plan -> Build in modules -> Test continuously -> Document.',
+  },
+  {
+    id: 'u2-cs-02',
+    heading: 'Communication and Planning',
+    keyTerms: ['Communication', 'Scope', 'Time', 'Cost', 'Risk', 'Milestones'],
+    points: [
+      'Communication: understand customer needs, ask questions, confirm requirements, and record key points.',
+      'Planning covers scope, time, cost, resources, risks, and milestones.',
+      'Good communication reduces rework and improves delivery confidence.',
+    ],
+    quickBox: 'Exam Tip: Communication gathers correct needs; planning converts needs into an actionable roadmap.',
+  },
+  {
+    id: 'u2-cs-03',
+    heading: 'Modelling, Construction, and Deployment',
+    keyTerms: ['Modelling', 'Construction', 'Deployment'],
+    points: [
+      'Modelling is representation before coding.',
+      'Common models: data model, flow model, behavioral model, object-oriented model.',
+      'Construction phase includes coding, testing, and debugging.',
+      'Deployment includes installation, user training, feedback collection, and maintenance.',
+    ],
+    quickBox: 'Flow: Model first -> Construct with quality -> Deploy and improve from feedback.',
+  },
+  {
+    id: 'u2-cs-04',
+    heading: 'Requirements Engineering',
+    keyTerms: ['Inception', 'Elicitation', 'Elaboration', 'Negotiation', 'Validation', 'Management'],
+    points: [
+      'Requirements Engineering phases: inception, elicitation, elaboration, negotiation, specification, validation, and management.',
+      'Requirement initiation identifies stakeholders, defines goals, asks basic questions, and sets project scope.',
+      'Software analysis studies requirements deeply before design and coding.',
+    ],
+    quickBox: 'Remember: Clear requirements are the foundation of quality software.',
+  },
+  {
+    id: 'u2-cs-05',
+    heading: 'Analysis and Data Modelling',
+    keyTerms: ['Analysis Model', 'Function', 'Data', 'Behavior', 'Processing'],
+    points: [
+      'Analysis model shows functions, data, behavior, and processing.',
+      'Data modelling focuses on entity, attribute, and relationship.',
+      'A strong analysis model reduces ambiguity in later phases.',
+    ],
+    quickBox: 'Use diagrams + keywords together to make answers complete in exams.',
+  },
+  {
+    id: 'u2-cs-06',
+    heading: 'OOA and Flow-Oriented Model',
+    keyTerms: ['Object', 'Class', 'Attribute', 'Method', 'DFD'],
+    points: [
+      'OOA includes object, class, attribute, method, and relationship.',
+      'Flow-oriented model includes external entity, process, data flow, and data store.',
+      'DFD explains how information moves through the system.',
+    ],
+    quickBox: 'Quick Recall: OOA = object/class view, Flow-oriented = data movement view.',
+  },
+  {
+    id: 'u2-cs-07',
+    heading: 'Class-Based and Behavioural Models',
+    keyTerms: ['Class-Based', 'Behavioral', 'State', 'Sequence', 'Activity'],
+    points: [
+      'Class-based model includes classes, attributes, methods, and relationships.',
+      'Behavioural model captures dynamic behavior using state, sequence, and activity diagrams.',
+      'Behavioral diagrams explain how the system reacts over time.',
+    ],
+    quickBox: 'Static view: class-based model | Dynamic view: behavioral model.',
+  },
+  {
+    id: 'u2-cs-08',
+    heading: 'Design Approaches and Concepts',
+    keyTerms: ['Top-Down', 'Bottom-Up', 'Modularity', 'Abstraction', 'Patterns'],
+    points: [
+      'Design approaches: top-down, bottom-up, structured, and object-oriented.',
+      'Design concepts: abstraction, refinement, modularity, information hiding, functional independence, architecture, and patterns.',
+      'These concepts improve maintainability and scalability.',
+    ],
+    quickBox: 'Maintainability improves when design is modular, abstract, and well-structured.',
+  },
+  {
+    id: 'u2-cs-09',
+    heading: 'Design Model and Pattern-Based Design',
+    keyTerms: ['Data Design', 'Architecture', 'Interface', 'Component', 'Deployment', 'Patterns'],
+    points: [
+      'Design model includes data design, architectural design, interface design, component-level design, and deployment design.',
+      'Pattern-based design uses reusable solutions like Singleton, Factory, and Observer.',
+      'Patterns speed up development and improve consistency.',
+    ],
+    quickBox:
+      'Quick Revision Box: Communication = understand needs | Construction = coding + testing | Deployment = real use | DFD = data flow | Behavioral model = dynamic view | Design concepts improve maintainability',
+  },
+];
+
+const unit3CheatSheet = [
+  {
+    id: 'u3-cs-01',
+    heading: 'Unit 3 Cheat Sheet - Software Testing Basics',
+    keyTerms: ['Correctness', 'Defects', 'Quality', 'Reliability'],
+    points: [
+      'Testing checks software correctness and finds defects.',
+      'Testing improves overall software quality.',
+      'Testing increases software reliability in real use.',
+    ],
+    quickBox: 'Testing Goal: Build confidence that software works correctly and consistently.',
+  },
+  {
+    id: 'u3-cs-02',
+    heading: 'Strategic Testing Order',
+    keyTerms: ['Unit', 'Integration', 'Validation', 'System'],
+    points: [
+      'Recommended order: unit testing -> integration testing -> validation testing -> system testing.',
+      'This order moves from smallest parts to full-system behavior.',
+    ],
+    quickBox: 'Remember sequence: Unit first, System last.',
+  },
+  {
+    id: 'u3-cs-03',
+    heading: 'Unit and Integration Testing',
+    keyTerms: ['Smallest Part', 'Logic', 'I/O', 'Top-Down', 'Bottom-Up'],
+    points: [
+      'Unit testing checks the smallest software part.',
+      'It verifies logic, input/output handling, loops, and conditions.',
+      'Integration testing checks module interaction and data exchange.',
+      'Common integration approaches: top-down and bottom-up.',
+    ],
+    quickBox: 'Unit = single module quality, Integration = module connection quality.',
+  },
+  {
+    id: 'u3-cs-04',
+    heading: 'Regression and Smoke Testing',
+    keyTerms: ['Regression', 'Updates', 'Smoke', 'Build Stability'],
+    points: [
+      'Regression testing is done after bug fixes or updates.',
+      'It confirms old features still work after changes.',
+      'Smoke testing is a quick basic build check.',
+    ],
+    quickBox: 'After every change, do smoke first, then deeper regression as needed.',
+  },
+  {
+    id: 'u3-cs-05',
+    heading: 'Validation, Alpha, Beta, and System Testing',
+    keyTerms: ['Validation', 'Alpha', 'Beta', 'System'],
+    points: [
+      'Validation testing checks whether software meets user needs.',
+      'Alpha testing is internal testing at developer side.',
+      'Beta testing is done by real users in real environments.',
+      'System testing verifies the complete integrated system.',
+    ],
+    quickBox: 'Alpha = internal release check, Beta = real-world user check.',
+  },
+  {
+    id: 'u3-cs-06',
+    heading: 'Types of System Testing',
+    keyTerms: ['Recovery', 'Security', 'Stress', 'Performance'],
+    points: [
+      'Recovery testing checks recovery from failures and crashes.',
+      'Security testing checks protection from unauthorized access.',
+      'Stress testing checks behavior under extreme load.',
+      'Performance testing checks speed, throughput, and responsiveness.',
+    ],
+    quickBox: 'System testing ensures software is stable, safe, and efficient.',
+  },
+  {
+    id: 'u3-cs-07',
+    heading: 'Black Box vs White Box Testing',
+    keyTerms: ['Input/Output', 'Internal Logic', 'Paths', 'Conditions'],
+    points: [
+      'Black box testing is input/output based and does not require code knowledge.',
+      'White box testing checks internal logic and code structure.',
+      'White box techniques often verify paths and conditions.',
+    ],
+    quickBox: 'Black box = external behavior, White box = internal logic.',
+  },
+  {
+    id: 'u3-cs-08',
+    heading: 'Debugging and Strategies',
+    keyTerms: ['Root Cause', 'Brute Force', 'Backtracking', 'Cause Elimination'],
+    points: [
+      'Debugging means finding and fixing the root cause of errors.',
+      'Brute force: use logs/prints and inspect execution behavior.',
+      'Backtracking: trace backward from failure point to source.',
+      'Cause elimination: form and test hypotheses to isolate error source.',
+    ],
+    quickBox:
+      'Quick Revision Box: Unit = smallest part | Integration = module connection | Regression = after change | Smoke = basic stability | Alpha = internal | Beta = external users | Black box = external behavior | White box = internal logic',
+  },
+];
+
+const unit4CheatSheet = [
+  {
+    id: 'u4-cs-01',
+    heading: 'Unit 4 Cheat Sheet - Project Management',
+    keyTerms: ['Management Spectrum', 'People', 'Product', 'Process', 'Project'],
+    points: [
+      'Management spectrum includes people, product, process, and project.',
+      'People: teamwork, communication, leadership, and coordination drive project success.',
+      'Product: features, goals, scope, and constraints must be clear.',
+      'Process: organized development activities guide quality execution.',
+      'Project: planning, scheduling, monitoring, and controlling are essential.',
+    ],
+    quickBox: 'Core Formula: People + Product + Process + Project = Effective project management.',
+  },
+  {
+    id: 'u4-cs-02',
+    heading: 'Project Scheduling Essentials',
+    keyTerms: ['Task', 'Milestone', 'Deliverable', 'Dependency', 'Timeline'],
+    points: [
+      'Project scheduling defines tasks, milestones, deliverables, dependencies, and timeline.',
+      'A milestone marks a major checkpoint in progress.',
+      'Dependencies show which tasks must finish before others can begin.',
+      'Timeline keeps the project time-bound and trackable.',
+    ],
+    quickBox: 'Scheduling organizes work in the right order at the right time.',
+  },
+  {
+    id: 'u4-cs-03',
+    heading: 'People and Effort Management',
+    keyTerms: ['Effort', 'Communication Overhead', 'Phases', 'Distribution'],
+    points: [
+      'More people do not always reduce project time.',
+      'As team size grows, communication overhead increases.',
+      'Effort distribution spans requirements, design, coding, testing, and maintenance.',
+      'Balanced effort allocation improves delivery predictability.',
+    ],
+    quickBox: 'Exam Point: Adding people to a late project can make it later due to coordination costs.',
+  },
+  {
+    id: 'u4-cs-04',
+    heading: 'Task Definition and Task Network',
+    keyTerms: ['Objective', 'Input', 'Output', 'Owner', 'Duration', 'Dependency'],
+    points: [
+      'A well-defined task includes name, objective, input, output, responsible person, duration, and dependency.',
+      'Task network shows order and dependency among tasks.',
+      'Task network helps identify critical flow and bottlenecks.',
+    ],
+    quickBox: 'Clear task definitions reduce confusion and improve accountability.',
+  },
+  {
+    id: 'u4-cs-05',
+    heading: 'Risk Management Workflow',
+    keyTerms: ['Identification', 'Projection', 'Refinement', 'Monitoring', 'Management'],
+    points: [
+      'Risk management steps: identification, projection, refinement, monitoring, and management.',
+      'Reactive strategy responds after a problem appears.',
+      'Proactive strategy acts before problems occur and is generally better.',
+      'Software risks include project risk, technical risk, and business risk.',
+    ],
+    quickBox: 'Prefer proactive risk handling to reduce impact and cost.',
+  },
+  {
+    id: 'u4-cs-06',
+    heading: 'Change Management and SCM',
+    keyTerms: ['Change Control', 'SCM', 'Repository', 'Versioning'],
+    points: [
+      'Change management controls changes in requirements, code, design, and documentation.',
+      'SCM stands for Software Configuration Management.',
+      'SCM includes scenario, repository, and process.',
+      'SCM repository stores code, documents, versions, and test files.',
+    ],
+    quickBox: 'SCM ensures every change is tracked, controlled, and recoverable.',
+  },
+  {
+    id: 'u4-cs-07',
+    heading: 'Formal Methods and Cleanroom',
+    keyTerms: ['Mathematics', 'Verification', 'Defect Prevention', 'Independent Testing'],
+    points: [
+      'Formal methods use mathematical specification and verification.',
+      'Cleanroom development emphasizes defect prevention.',
+      'Cleanroom uses disciplined development with independent testing.',
+      'These approaches increase software reliability for critical systems.',
+    ],
+    quickBox:
+      'Quick Revision Box: Management spectrum = people, product, process, project | Scheduling organizes work | Proactive risk strategy is better | SCM controls versions and changes | Cleanroom focuses on defect prevention',
+  },
+];
+
+const unit5CheatSheet = [
+  {
+    id: 'u5-cs-01',
+    heading: 'Unit 5 Cheat Sheet - Software Quality Management & Estimation',
+    keyTerms: ['Correctness', 'Reliability', 'Efficiency', 'Usability', 'Maintainability', 'Portability'],
+    points: [
+      'Basic quality concepts include correctness, reliability, efficiency, usability, maintainability, and portability.',
+      'Quality software should be dependable, easy to use, and easy to maintain.',
+    ],
+    quickBox: 'Quality in one line: Correct + Reliable + Efficient + Maintainable software.',
+  },
+  {
+    id: 'u5-cs-02',
+    heading: 'SQA and Statistical SQA',
+    keyTerms: ['SQA', 'Defect Prevention', 'Metrics', 'Data Analysis'],
+    points: [
+      'SQA (Software Quality Assurance) includes planned activities to ensure software quality.',
+      'SQA focuses on defect prevention, not only defect detection.',
+      'Statistical SQA uses data and defect analysis to improve quality.',
+    ],
+    quickBox: 'Exam Memory: SQA prevents defects; Statistical SQA measures and improves using data.',
+  },
+  {
+    id: 'u5-cs-03',
+    heading: 'Six Sigma and DMAIC',
+    keyTerms: ['Six Sigma', 'Define', 'Measure', 'Analyze', 'Improve', 'Control'],
+    points: [
+      'Six Sigma is a defect-reduction strategy.',
+      'DMAIC steps: Define, Measure, Analyze, Improve, and Control.',
+      'DMAIC provides a structured path to improve process quality.',
+    ],
+    quickBox: 'DMAIC order: Define -> Measure -> Analyze -> Improve -> Control.',
+  },
+  {
+    id: 'u5-cs-04',
+    heading: 'Reliability, ISO 9000, and McCall Quality Factors',
+    keyTerms: ['Reliability', 'ISO 9000', 'McCall'],
+    points: [
+      'Software reliability is the probability of failure-free operation.',
+      'ISO 9000 provides international quality standards and improves process discipline.',
+      'McCall quality factors: correctness, reliability, efficiency, integrity, usability, maintainability, flexibility, testability, portability, reusability, interoperability.',
+    ],
+    quickBox: 'Reliability = failure-free working under expected conditions.',
+  },
+  {
+    id: 'u5-cs-05',
+    heading: 'Estimation and Scope',
+    keyTerms: ['Estimation', 'Effort', 'Cost', 'Time', 'Scope'],
+    points: [
+      'Estimation predicts effort, cost, and time.',
+      'Early estimates are usually less accurate and improve with better requirement clarity.',
+      'Software scope defines project boundaries and what is included/excluded.',
+    ],
+    quickBox: 'Good estimation starts with clear scope and realistic assumptions.',
+  },
+  {
+    id: 'u5-cs-06',
+    heading: 'Feasibility and Resources',
+    keyTerms: ['Technical', 'Economic', 'Operational', 'Schedule', 'Resources'],
+    points: [
+      'Feasibility dimensions: technical, economic, operational, and schedule.',
+      'Resource categories: human, software, hardware, reusable, and financial.',
+      'Feasibility helps decide whether a project is practical before major investment.',
+    ],
+    quickBox: 'Feasibility checks "Can we do it?" before asking "How fast can we do it?"',
+  },
+  {
+    id: 'u5-cs-07',
+    heading: 'Decomposition, COCOMO II, and Make/Buy',
+    keyTerms: ['Decomposition', 'Problem-Based', 'Process-Based', 'COCOMO II', 'Make/Buy'],
+    points: [
+      'Decomposition techniques break projects into smaller parts for better estimation.',
+      'Common decomposition approaches: problem-based and process-based.',
+      'COCOMO II is a model for cost, effort, and schedule estimation.',
+      'Make/Buy decision: make = build internally, buy = purchase externally.',
+      'Decision factors include cost, time, customization needs, and available skills.',
+    ],
+    quickBox:
+      'Quick Revision Box: SQA prevents defects | Statistical SQA uses data | Six Sigma reduces defects | Reliability = failure-free working | ISO 9000 = quality standards | COCOMO II = estimation model | Make/Buy = build or purchase',
+  },
+];
+
 const unit3CompleteQuiz = [
   {
     id: 'u3-cq-01',
@@ -823,6 +1275,189 @@ const unit4CompleteQuiz = [
   },
 ];
 
+const unit5CompleteQuiz = [
+  {
+    id: 'u5-cq-01',
+    question: 'Software quality mainly means software is:',
+    options: ['Colorful', 'Correct and reliable', 'Expensive', 'Very large'],
+    correctAnswer: 1,
+    explanation: 'Quality means correct, reliable, and useful software.',
+  },
+  {
+    id: 'u5-cq-02',
+    question: 'Software Quality Assurance mainly focuses on:',
+    options: ['Preventing defects', 'Selling software', 'Designing hardware', 'Increasing file size'],
+    correctAnswer: 0,
+    explanation: 'SQA aims to prevent problems early.',
+  },
+  {
+    id: 'u5-cq-03',
+    question: 'SQA stands for:',
+    options: [
+      'Software Quality Assurance',
+      'System Query Analysis',
+      'Software Quick Access',
+      'Secure Quality Application',
+    ],
+    correctAnswer: 0,
+    explanation: 'This is the full form of SQA.',
+  },
+  {
+    id: 'u5-cq-04',
+    question: 'Statistical SQA uses:',
+    options: ['Random guessing', 'Data and defect analysis', 'Only coding', 'Only graphics'],
+    correctAnswer: 1,
+    explanation: 'It improves quality using measurements.',
+  },
+  {
+    id: 'u5-cq-05',
+    question: 'Six Sigma strategy is mainly used to:',
+    options: ['Increase defects', 'Reduce defects', 'Remove planning', 'Avoid testing'],
+    correctAnswer: 1,
+    explanation: 'Six Sigma focuses on defect reduction.',
+  },
+  {
+    id: 'u5-cq-06',
+    question: 'In DMAIC, the letter A stands for:',
+    options: ['Apply', 'Analyze', 'Arrange', 'Assess'],
+    correctAnswer: 1,
+    explanation: 'DMAIC includes Define, Measure, Analyze, Improve, Control.',
+  },
+  {
+    id: 'u5-cq-07',
+    question: 'Software reliability means:',
+    options: [
+      'Software looks attractive',
+      'Software works without failure',
+      'Software uses more memory',
+      'Software has more screens',
+    ],
+    correctAnswer: 1,
+    explanation: 'Reliability means dependable operation.',
+  },
+  {
+    id: 'u5-cq-08',
+    question: 'ISO 9000 is related to:',
+    options: ['Quality standards', 'Game design', 'Programming language', 'Network cable'],
+    correctAnswer: 0,
+    explanation: 'ISO 9000 defines quality management standards.',
+  },
+  {
+    id: 'u5-cq-09',
+    question: 'McCall’s quality factors are used to:',
+    options: [
+      'Evaluate software quality',
+      'Buy computers',
+      'Draw diagrams',
+      'Test internet speed',
+    ],
+    correctAnswer: 0,
+    explanation: 'They measure different aspects of quality.',
+  },
+  {
+    id: 'u5-cq-10',
+    question: 'Which is a McCall quality factor?',
+    options: ['Reliability', 'Electricity', 'Packaging', 'Shipping'],
+    correctAnswer: 0,
+    explanation: 'Reliability is one of McCall’s factors.',
+  },
+  {
+    id: 'u5-cq-11',
+    question: 'Estimation in software engineering is used to predict:',
+    options: ['Screen color', 'Effort, cost, and time', 'Only program name', 'Only user password'],
+    correctAnswer: 1,
+    explanation: 'Estimation predicts project needs.',
+  },
+  {
+    id: 'u5-cq-12',
+    question: 'Early software estimates are usually:',
+    options: ['Completely exact', 'Less accurate', 'Always final', 'Always wrong'],
+    correctAnswer: 1,
+    explanation: 'Early estimates are rough and less accurate.',
+  },
+  {
+    id: 'u5-cq-13',
+    question: 'Software scope defines:',
+    options: ['Project boundaries', 'Monitor size', 'Keyboard type', 'Network speed'],
+    correctAnswer: 0,
+    explanation: 'Scope tells what is included and excluded.',
+  },
+  {
+    id: 'u5-cq-14',
+    question: 'Feasibility study checks whether the project is:',
+    options: ['Possible and practical', 'Colorful', 'Already complete', 'Free of cost only'],
+    correctAnswer: 0,
+    explanation: 'Feasibility checks if the project can be done.',
+  },
+  {
+    id: 'u5-cq-15',
+    question: 'Human resources in project planning include:',
+    options: ['Developers and testers', 'Only servers', 'Only buildings', 'Only software licenses'],
+    correctAnswer: 0,
+    explanation: 'Human resources are the people working on the project.',
+  },
+  {
+    id: 'u5-cq-16',
+    question: 'Decomposition technique means:',
+    options: [
+      'Breaking project into smaller parts',
+      'Deleting requirements',
+      'Removing quality',
+      'Changing hardware',
+    ],
+    correctAnswer: 0,
+    explanation: 'Decomposition makes estimation easier.',
+  },
+  {
+    id: 'u5-cq-17',
+    question: 'COCOMO II is used for:',
+    options: [
+      'Cost and effort estimation',
+      'Drawing UML only',
+      'Security testing only',
+      'User training only',
+    ],
+    correctAnswer: 0,
+    explanation: 'COCOMO II estimates software project effort and cost.',
+  },
+  {
+    id: 'u5-cq-18',
+    question: 'Make/Buy decision means deciding whether to:',
+    options: [
+      'Build or purchase software',
+      'Test or deploy software',
+      'Design or debug software',
+      'Print or scan documents',
+    ],
+    correctAnswer: 0,
+    explanation: 'It compares in-house development with buying.',
+  },
+  {
+    id: 'u5-cq-19',
+    question: 'Buying software is often useful when:',
+    options: [
+      'quick solution is needed',
+      'no software is available',
+      'only custom code is possible',
+      'requirements never change',
+    ],
+    correctAnswer: 0,
+    explanation: 'Buying saves time when ready-made software is available.',
+  },
+  {
+    id: 'u5-cq-20',
+    question: 'Making software is often useful when:',
+    options: [
+      'customization is needed',
+      'no team exists',
+      'time is zero',
+      'quality is not needed',
+    ],
+    correctAnswer: 0,
+    explanation: 'Making software is better for special needs.',
+  },
+];
+
 export const units = [1, 2, 3, 4, 5].map((number) => ({
   id: String(number),
   title:
@@ -843,7 +1478,20 @@ export const units = [1, 2, 3, 4, 5].map((number) => ({
           ? unit3CompleteQuiz
           : number === 4
             ? unit4CompleteQuiz
+            : number === 5
+              ? unit5CompleteQuiz
           : makeQuiz(number, 'complete'),
   pyqQuiz: makeQuiz(number, 'pyq'),
-  cheatSheet: makeCheatSheet(number),
+  cheatSheet:
+    number === 1
+      ? unit1CheatSheet
+      : number === 2
+        ? unit2CheatSheet
+        : number === 3
+          ? unit3CheatSheet
+          : number === 4
+            ? unit4CheatSheet
+            : number === 5
+              ? unit5CheatSheet
+        : makeCheatSheet(number),
 }));
