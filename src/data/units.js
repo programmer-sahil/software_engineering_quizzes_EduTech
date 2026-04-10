@@ -600,6 +600,229 @@ const unit2CompleteQuiz = [
   },
 ];
 
+const unit4CompleteQuiz = [
+  {
+    id: 'u4-cq-01',
+    question: 'The management spectrum includes:',
+    options: [
+      'People, product, process, project',
+      'CPU, RAM, keyboard, mouse',
+      'Input, output, storage, power',
+      'Design, painting, printing, shipping',
+    ],
+    correctAnswer: 0,
+    explanation: 'These are the four main parts of management spectrum.',
+  },
+  {
+    id: 'u4-cq-02',
+    question: 'In project management, people are important because they:',
+    options: [
+      'Replace requirements',
+      'Perform and manage project work',
+      'Only buy software',
+      'Only create hardware',
+    ],
+    correctAnswer: 1,
+    explanation: 'Projects depend on teamwork and human effort.',
+  },
+  {
+    id: 'u4-cq-03',
+    question: 'Project scheduling mainly decides:',
+    options: ['Software color', 'Task timing and sequence', 'Only testing tools', 'Only hardware cost'],
+    correctAnswer: 1,
+    explanation: 'Scheduling sets when tasks will happen.',
+  },
+  {
+    id: 'u4-cq-04',
+    question: 'A milestone in project scheduling is:',
+    options: [
+      'A project checkpoint',
+      'A coding language',
+      'A user manual',
+      'A hardware device',
+    ],
+    correctAnswer: 0,
+    explanation: 'A milestone marks important progress.',
+  },
+  {
+    id: 'u4-cq-05',
+    question: 'Effort in software project means:',
+    options: [
+      'Decoration cost',
+      'Amount of work required',
+      'Number of computers',
+      'Internet speed',
+    ],
+    correctAnswer: 1,
+    explanation: 'Effort is the work needed to finish the project.',
+  },
+  {
+    id: 'u4-cq-06',
+    question: 'Adding more people to a late project may:',
+    options: [
+      'Always finish it faster',
+      'Increase communication overhead',
+      'Remove all risks',
+      'Stop testing',
+    ],
+    correctAnswer: 1,
+    explanation: 'More people can increase coordination problems.',
+  },
+  {
+    id: 'u4-cq-07',
+    question: 'Effort distribution means:',
+    options: [
+      'Dividing project work among phases',
+      'Deleting extra tasks',
+      'Increasing coding only',
+      'Selling modules separately',
+    ],
+    correctAnswer: 0,
+    explanation: 'Effort is spread across analysis, design, coding, testing.',
+  },
+  {
+    id: 'u4-cq-08',
+    question: 'A task in a software project should be:',
+    options: ['Unclear', 'Specific and measurable', 'Random', 'Hidden from team'],
+    correctAnswer: 1,
+    explanation: 'A good task must be clearly defined.',
+  },
+  {
+    id: 'u4-cq-09',
+    question: 'Task network shows:',
+    options: ['Internet speed', 'Task dependencies and order', 'User passwords', 'Source code format'],
+    correctAnswer: 1,
+    explanation: 'It shows how tasks are connected.',
+  },
+  {
+    id: 'u4-cq-10',
+    question: 'Risk in software project is:',
+    options: [
+      'A guaranteed success',
+      'A possible future problem',
+      'A design color',
+      'A programming language',
+    ],
+    correctAnswer: 1,
+    explanation: 'Risk is an uncertain event that may cause loss.',
+  },
+  {
+    id: 'u4-cq-11',
+    question: 'Proactive risk strategy means:',
+    options: [
+      'Acting before risk happens',
+      'Ignoring all risks',
+      'Solving only after failure',
+      'Avoiding project planning',
+    ],
+    correctAnswer: 0,
+    explanation: 'Proactive strategy prepares in advance.',
+  },
+  {
+    id: 'u4-cq-12',
+    question: 'Reactive risk strategy means:',
+    options: [
+      'Preventing all risks early',
+      'Taking action after problem occurs',
+      'Avoiding monitoring',
+      'Ending the project',
+    ],
+    correctAnswer: 1,
+    explanation: 'Reactive strategy responds after the issue appears.',
+  },
+  {
+    id: 'u4-cq-13',
+    question: 'Risk identification means:',
+    options: [
+      'Hiding project problems',
+      'Finding possible risks',
+      'Fixing only code bugs',
+      'Releasing software',
+    ],
+    correctAnswer: 1,
+    explanation: 'It is the process of discovering risks.',
+  },
+  {
+    id: 'u4-cq-14',
+    question: 'Risk projection is used to estimate:',
+    options: [
+      'Probability and impact of risk',
+      'Only coding speed',
+      'Only screen size',
+      'Only project name',
+    ],
+    correctAnswer: 0,
+    explanation: 'Projection measures chance and effect.',
+  },
+  {
+    id: 'u4-cq-15',
+    question: 'Change management is used to:',
+    options: [
+      'Control software changes',
+      'Stop all updates',
+      'Remove documentation',
+      'Increase hardware price',
+    ],
+    correctAnswer: 0,
+    explanation: 'It handles changes in a controlled way.',
+  },
+  {
+    id: 'u4-cq-16',
+    question: 'SCM stands for:',
+    options: [
+      'Software Configuration Management',
+      'System Coding Method',
+      'Software Control Mechanism',
+      'System Configuration Model',
+    ],
+    correctAnswer: 0,
+    explanation: 'SCM manages software changes and versions.',
+  },
+  {
+    id: 'u4-cq-17',
+    question: 'SCM repository stores:',
+    options: [
+      'Only hardware devices',
+      'Code, documents, and versions',
+      'Only project bills',
+      'Only emails',
+    ],
+    correctAnswer: 1,
+    explanation: 'Repository keeps all software items.',
+  },
+  {
+    id: 'u4-cq-18',
+    question: 'Formal methods are based on:',
+    options: ['Guesswork', 'Mathematics and logic', 'Random coding', 'Only graphics'],
+    correctAnswer: 1,
+    explanation: 'Formal methods use mathematical specifications.',
+  },
+  {
+    id: 'u4-cq-19',
+    question: 'Cleanroom software development mainly focuses on:',
+    options: [
+      'Defect prevention',
+      'More typing speed',
+      'Bigger screen design',
+      'User advertisement',
+    ],
+    correctAnswer: 0,
+    explanation: 'Cleanroom tries to prevent defects early.',
+  },
+  {
+    id: 'u4-cq-20',
+    question: 'Independent testing is associated with:',
+    options: [
+      'Cleanroom approach',
+      'Only waterfall model',
+      'Only RAD',
+      'Only maintenance',
+    ],
+    correctAnswer: 0,
+    explanation: 'Cleanroom uses independent testing for certification.',
+  },
+];
+
 export const units = [1, 2, 3, 4, 5].map((number) => ({
   id: String(number),
   title:
@@ -618,6 +841,8 @@ export const units = [1, 2, 3, 4, 5].map((number) => ({
         ? unit2CompleteQuiz
         : number === 3
           ? unit3CompleteQuiz
+          : number === 4
+            ? unit4CompleteQuiz
           : makeQuiz(number, 'complete'),
   pyqQuiz: makeQuiz(number, 'pyq'),
   cheatSheet: makeCheatSheet(number),
