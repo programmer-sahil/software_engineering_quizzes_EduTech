@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Clock3, Flag, Sparkles } from 'lucide-react';
 import { useMemo, useState } from 'react';
+import CareerUpskillingBanner from './CareerUpskillingBanner';
 import QuizProgress from './QuizProgress';
 import QuizResult from './QuizResult';
 import Button from './ui/Button';
 
-function QuizPlayer({ title, questions }) {
+function QuizPlayer({ title, questions, showUpskillingBanner = true }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -64,6 +65,8 @@ function QuizPlayer({ title, questions }) {
       </div>
 
       <QuizProgress currentIndex={currentIndex} total={questions.length} answered={answeredCount} />
+
+      {showUpskillingBanner ? <CareerUpskillingBanner variant="quiz" /> : null}
 
       <AnimatePresence mode="wait">
         <motion.div

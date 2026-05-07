@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import HomePage from './pages/HomePage';
 import UnitPage from './pages/UnitPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -31,6 +32,7 @@ function App() {
         </Routes>
       </AnimatePresence>
       <Footer />
+      <WhatsAppFloatingButton />
     </div>
   );
 }

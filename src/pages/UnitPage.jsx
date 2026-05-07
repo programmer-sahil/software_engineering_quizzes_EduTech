@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CheatSheetView from '../components/CheatSheetView';
+import CareerUpskillingBanner from '../components/CareerUpskillingBanner';
 import PageTransition from '../components/PageTransition';
 import QuizPlayer from '../components/QuizPlayer';
 import StudyModeCards from '../components/StudyModeCards';
@@ -40,6 +41,9 @@ function UnitPage() {
   return (
     <PageTransition>
       <UnitHeader title={unit.title} />
+      <section className="section-shell mt-6">
+        <CareerUpskillingBanner variant="unit" unitTitle={unit.title} />
+      </section>
       <StudyModeCards activeMode={activeMode} onChange={setActiveMode} />
 
       <section className="section-shell mt-6">
@@ -53,10 +57,20 @@ function UnitPage() {
 
           <div className="mt-6">
             {activeMode === 'complete-quiz' && (
-              <QuizPlayer key={`${unit.id}-complete`} title={`${unit.title} - Complete Quiz`} questions={unit.completeQuiz} />
+              <QuizPlayer
+                key={`${unit.id}-complete`}
+                title={`${unit.title} - Complete Quiz`}
+                questions={unit.completeQuiz}
+                showUpskillingBanner={false}
+              />
             )}
             {activeMode === 'pyq-quiz' && (
-              <QuizPlayer key={`${unit.id}-pyq`} title={`${unit.title} - PYQ Quiz`} questions={unit.pyqQuiz} />
+              <QuizPlayer
+                key={`${unit.id}-pyq`}
+                title={`${unit.title} - PYQ Quiz`}
+                questions={unit.pyqQuiz}
+                showUpskillingBanner={false}
+              />
             )}
             {activeMode === 'cheat-sheet' && <CheatSheetView sections={unit.cheatSheet} />}
           </div>

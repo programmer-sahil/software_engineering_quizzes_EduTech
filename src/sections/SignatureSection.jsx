@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { BRAND } from '../data/units';
+import sahilMain from '../../assets/profile/sahil-main.jpg';
+import teachingMain from '../../assets/profile/teaching-main.jpg';
 
 const trustHighlights = [
   '100% Common Question Focus',
@@ -28,6 +30,33 @@ function SignatureSection() {
           {BRAND.subtitle} with industrial experience, who has taught 400+ students in top reputed engineering
           colleges in West Bengal, India.
         </p>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <motion.figure
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+            className="overflow-hidden rounded-2xl border border-white/15 bg-slate-950/35"
+          >
+            <img src={sahilMain} alt={`${BRAND.madeBy} profile`} className="h-52 w-full object-cover sm:h-64" />
+            <figcaption className="px-4 py-3 text-xs text-slate-200 sm:text-sm">
+              {BRAND.madeBy} - Freelance AI Developer and dedicated coding mentor.
+            </figcaption>
+          </motion.figure>
+          <motion.figure
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.08 }}
+            viewport={{ once: true }}
+            className="overflow-hidden rounded-2xl border border-white/15 bg-slate-950/35"
+          >
+            <img src={teachingMain} alt={`${BRAND.madeBy} teaching session`} className="h-52 w-full object-cover sm:h-64" />
+            <figcaption className="px-4 py-3 text-xs text-slate-200 sm:text-sm">
+              Practical classroom guidance with project-oriented training and doubt clearing.
+            </figcaption>
+          </motion.figure>
+        </div>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {trustHighlights.map((item, index) => (
