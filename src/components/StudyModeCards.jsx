@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { BookText, BrainCircuit, FileQuestion, Medal } from 'lucide-react';
 import GlassCard from './ui/GlassCard';
 
-const modes = [
+const defaultModes = [
   {
     id: 'complete-quiz',
     title: 'Complete Unit Quiz',
@@ -23,7 +23,7 @@ const modes = [
   },
 ];
 
-function StudyModeCards({ activeMode, onChange }) {
+function StudyModeCards({ activeMode, onChange, modes = defaultModes }) {
   return (
     <section className="section-shell mt-8">
       <div className="grid gap-4 md:grid-cols-3">

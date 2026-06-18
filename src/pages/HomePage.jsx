@@ -4,7 +4,8 @@ import SiteLoader from '../components/SiteLoader';
 import FeatureCards from '../sections/FeatureCards';
 import HeroSection from '../sections/HeroSection';
 import SignatureSection from '../sections/SignatureSection';
-import UnitsGrid from '../sections/UnitsGrid';
+import SubjectsGrid from '../sections/SubjectsGrid';
+import ServicesOverview from '../sections/ServicesOverview';
 import CareerUpskillingBanner from '../components/CareerUpskillingBanner';
 
 function HomePage() {
@@ -24,7 +25,8 @@ function HomePage() {
           <CareerUpskillingBanner variant="landing" />
         </section>
         <FeatureCards />
-        <UnitsGrid />
+        <SubjectsGrid />
+        <ServicesOverview />
         <SignatureSection />
       </PageTransition>
     </>

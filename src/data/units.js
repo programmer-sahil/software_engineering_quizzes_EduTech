@@ -1,11 +1,19 @@
 export const BRAND = {
-  title: 'Software Engineering Learning Hub',
-  heroSubtitle: 'Learn Unit-wise with Quiz, PYQ Practice, and Cheat Sheets',
+  title: 'EduTech Diploma Learning Hub',
+  heroSubtitle: 'Diploma Exam Preparation & Career Learning Hub',
   madeBy: 'SK SAHIL',
   subtitle: 'Freelance AI Developer, Coding Tutor',
   bannerText: 'EduTech',
   promoLine: 'Quality Teaching & Admission is going on',
   contact: '+91 72782 39699',
+};
+
+const unitDescriptions = {
+  1: 'Understand software evolution, layered technology, process frameworks, CMMI, PSP/TSP, and core SDLC models for strong exam answers.',
+  2: 'Practice requirements engineering, analysis models, data modelling, OOA, DFD, behavioral models, and design principles.',
+  3: 'Revise software testing strategy, unit and integration testing, validation, system testing, debugging, and quality-focused test techniques.',
+  4: 'Study project management concepts, people-product-process-project planning, scheduling, risk, configuration management, and maintenance.',
+  5: 'Prepare software quality assurance, reliability, ISO standards, metrics, estimation, COCOMO II, feasibility, and make-or-buy decisions.',
 };
 
 const makeQuiz = (unitNumber, variant) => {
@@ -2317,9 +2325,12 @@ export const units = [1, 2, 3, 4, 5].map((number) => ({
       : number === 2
       ? 'Unit 2: Software Development Activities'
       : number === 3
-        ? 'Unit 3: Software Testing Basics'
+          ? 'Unit 3: Software Testing Basics'
         : `Unit ${number}`,
-  description: `Placeholder summary for Unit ${number}. Replace with your exact syllabus topics, outcomes, and priorities.`,
+  description: unitDescriptions[number],
+  hours: number === 5 ? 12 : 10,
+  marks: number === 5 ? 12 : 10,
+  module: number <= 2 ? 'A' : number <= 4 ? 'B' : 'C',
   completeQuiz:
     number === 1
       ? unit1CompleteQuiz

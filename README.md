@@ -1,6 +1,6 @@
-# Software Engineering Learning Hub
+# EduTech Diploma Learning Hub
 
-Premium React + Vite EduTech website for unit-wise Software Engineering study.
+Premium React + Vite EduTech website for diploma exam preparation, project development services, and career support across Software Engineering, IoT, full-stack, data, ML, and AI domains.
 
 ## Tech Stack
 - React + Vite
@@ -28,6 +28,10 @@ src/
   components/
     ui/
   data/
+    subjects.js
+    services.js
+    softwareEngineeringUnits.js
+    iotUnits.js
     units.js
   pages/
   sections/
@@ -35,13 +39,13 @@ src/
 ```
 
 ## Edit Content Later
-Update `src/data/units.js`:
+Update subject content in `src/data/subjects.js`, `src/data/iotUnits.js`, and `src/data/units.js`:
 - `units[].description`
 - `units[].completeQuiz`
 - `units[].pyqQuiz`
 - `units[].cheatSheet`
 
-All unit and section screens automatically update from this central data file.
+Subject grids, services, and unit screens automatically update from these data files.
 
 ## Deploy to Vercel
 1. Push this project to GitHub.

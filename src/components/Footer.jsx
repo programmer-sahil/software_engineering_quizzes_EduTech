@@ -17,7 +17,8 @@ function Footer() {
               <p className="font-display text-xl text-white">Made by {BRAND.madeBy}</p>
               <p className="mt-1 text-sm text-slate-300">{BRAND.subtitle}</p>
               <p className="mt-2 text-sm leading-6 text-slate-300">
-                Exam-oriented learning platform for Software Engineering and diploma students.
+                Exam-oriented EduTech platform for Software Engineering, IoT, diploma preparation, and career
+                upskilling.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 text-sm lg:justify-end">

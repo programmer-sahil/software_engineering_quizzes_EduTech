@@ -25,10 +25,10 @@ function SignatureSection() {
           Get Exam-Focused Preparation with Highly Important Common Questions
         </h3>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-300 sm:text-[15px]">
-          Learn Software Engineering in a smart, structured, and exam-oriented way. Students get highly important
-          common question practice, unit-wise revision support, and simple concept clarity. Built by {BRAND.madeBy}, a{' '}
-          {BRAND.subtitle} with industrial experience, who has taught 400+ students in top reputed engineering
-          colleges in West Bengal, India.
+          Built by {BRAND.madeBy}, a Freelance AI Developer and Coding Tutor, focused on helping diploma students
+          prepare with unit-wise clarity, common questions, quizzes, PYQ practice, and cheat sheets. Students get simple
+          concept clarity, structured revision support, and practical career guidance from a mentor with industrial and
+          top engineering college teaching experience.
         </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">

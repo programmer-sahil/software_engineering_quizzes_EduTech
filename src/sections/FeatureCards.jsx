@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BookOpenText, ClipboardList, FileQuestion, Layers, Lightbulb } from 'lucide-react';
+import { BookOpenText, ClipboardList, FileQuestion, GraduationCap, Layers, Lightbulb } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 
 const features = [
@@ -7,7 +7,8 @@ const features = [
   { title: 'Complete Quiz Practice', description: 'One-question-at-a-time MCQ experience with progress and score.', icon: ClipboardList },
   { title: 'PYQ-based Preparation', description: 'Practice previous-year question patterns in quiz flow.', icon: FileQuestion },
   { title: 'Fast Revision Sheets', description: 'Beautiful cheat sheets with key terms and quick recall.', icon: BookOpenText },
-  { title: 'Student-friendly Learning', description: 'Simple navigation, premium UI, and confidence-focused flow.', icon: Lightbulb },
+  { title: 'Teacher Guidance', description: 'Common-question focus, live support, and beginner-friendly revision.', icon: GraduationCap },
+  { title: 'Career Upskilling', description: 'Affordable project mentoring for freelancing and IT job growth.', icon: Lightbulb },
 ];
 
 function FeatureCards() {

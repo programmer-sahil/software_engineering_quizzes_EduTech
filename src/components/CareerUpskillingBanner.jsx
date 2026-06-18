@@ -52,7 +52,7 @@ function CareerUpskillingBanner({ variant = 'landing', unitTitle }) {
   const [activeImage, setActiveImage] = useState(0);
   const whatsappLink = getWhatsAppLink();
   const showFullContent = variant !== 'quiz';
-  const exploreLink = variant === 'landing' ? '#units' : '/';
+  const exploreLink = variant === 'landing' ? '#subjects' : '/subjects';
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -129,7 +129,7 @@ function CareerUpskillingBanner({ variant = 'landing', unitTitle }) {
             {CAREER_UPSKILLING.outcome} <span className="text-emerald-200">{CAREER_UPSKILLING.contactLine}</span>
             {unitTitle ? <span className="text-cyan-200"> This support is available for {unitTitle} learners as well.</span> : null}
           </p>
-          <p className="mt-2 text-xs text-cyan-100">WhatsApp Direct: +91 85830 58673</p>
+          <p className="mt-2 text-xs text-cyan-100">WhatsApp Direct: +91 8583058673</p>
 
           <div className="mt-5 flex flex-wrap gap-3">
             <a
@@ -147,7 +147,7 @@ function CareerUpskillingBanner({ variant = 'landing', unitTitle }) {
               className="inline-flex items-center gap-2 rounded-xl border border-cyan-200/35 bg-cyan-500/12 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-500/20"
             >
               <Building2 size={16} />
-              {variant === 'landing' ? 'Explore Learning Units' : 'Back to Home'}
+              {variant === 'landing' ? 'Explore Subjects' : 'Back to Subjects'}
             </a>
           </div>
         </div>

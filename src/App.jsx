@@ -7,6 +7,9 @@ import ScrollToTop from './components/ScrollToTop';
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import HomePage from './pages/HomePage';
 import UnitPage from './pages/UnitPage';
+import SubjectsPage from './pages/SubjectsPage';
+import SubjectUnitsPage from './pages/SubjectUnitsPage';
+import ServicesPage from './pages/ServicesPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -27,7 +30,13 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/unit/:unitId" element={<UnitPage />} />
+          <Route path="/subjects" element={<SubjectsPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/software-engineering" element={<SubjectUnitsPage subjectId="software-engineering" />} />
+          <Route path="/iot" element={<SubjectUnitsPage subjectId="iot" />} />
+          <Route path="/software-engineering/unit/:unitId" element={<UnitPage subjectId="software-engineering" />} />
+          <Route path="/iot/unit/:unitId" element={<UnitPage subjectId="iot" />} />
+          <Route path="/unit/:unitId" element={<UnitPage subjectId="software-engineering" />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </AnimatePresence>

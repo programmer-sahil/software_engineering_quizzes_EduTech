@@ -1,22 +1,36 @@
 import { motion } from 'framer-motion';
-import { AppWindow, ArrowRight, Briefcase, Braces, ClipboardCheck, PhoneCall } from 'lucide-react';
+import { AppWindow, ArrowRight, Briefcase, Braces, ClipboardCheck, Cpu, Flame, PhoneCall, Trophy } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { BRAND } from '../data/units';
 import Button from '../components/ui/Button';
 import ThreeDBackgroundScene from '../components/ThreeDBackgroundScene';
 
 const techIcons = [
-  { title: 'Software Development', subtitle: 'Core concepts & design', Icon: Braces },
-  { title: 'Software Testing', subtitle: 'Unit, integration & QA', Icon: ClipboardCheck },
-  { title: 'Project Management', subtitle: 'Planning, risk & SCM', Icon: Briefcase },
-  { title: 'Websites', subtitle: 'Frontend and web systems', Icon: AppWindow },
-  { title: 'Apps', subtitle: 'Real-world software building', Icon: AppWindow },
+  { title: 'Software Engineering', subtitle: 'Development, testing & projects', Icon: Braces },
+  { title: 'Internet of Things', subtitle: 'Protocols, Arduino & sensors', Icon: Cpu },
+  { title: 'Quiz Practice', subtitle: 'Unit-wise MCQ revision', Icon: ClipboardCheck },
+  { title: 'PYQ + Cheat Sheets', subtitle: 'Fast exam pattern prep', Icon: AppWindow },
+  { title: 'Career Growth', subtitle: 'Freelancing and IT jobs', Icon: Briefcase },
 ];
 
 const trustHooks = [
-  'Exam-focused learning',
-  'Common-question practice',
-  'Beginner-friendly revision',
-  'Unit-wise smart preparation',
+  '99.99% common-question focused prep',
+  'Semester exam strategy',
+  '3-6 month career roadmap',
+  'Freelancing starter guidance',
+];
+
+const heroMetrics = [
+  {
+    title: '99.99%',
+    label: 'Common-question focus for semester exam preparation',
+    Icon: Trophy,
+  },
+  {
+    title: '3-6 Months',
+    label: 'Guided internship, job-readiness, and freelancing roadmap',
+    Icon: Flame,
+  },
 ];
 
 function HeroSection() {
@@ -33,19 +47,20 @@ function HeroSection() {
           className="mx-auto max-w-4xl text-center"
         >
           <span className="inline-flex items-center rounded-full border border-coral/45 bg-coral/10 px-3 py-1 text-xs font-medium text-coral">
-            {BRAND.promoLine}
+            Get 99.99% common-question focused exam preparation
           </span>
 
           <h1 className="mt-5 font-display text-4xl leading-tight text-white sm:text-5xl md:text-6xl">
-            {BRAND.title}
+            Semester Exam Preparation &amp; Career Learning Hub
           </h1>
 
           <p className="mt-4 text-base font-medium text-cyan-100 sm:text-lg">
-            For Diploma 4th Sem Computer Science &amp; Technology Students
+            EduTech Diploma Learning Hub for Computer Science &amp; Technology Students
           </p>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
-            Learn unit-wise with Quiz, PYQ Practice, and Cheat Sheets. Strengthen your concepts in software
-            development, software testing, project management, websites, and apps with simple exam-focused preparation.
+            Prepare for Software Engineering, IoT, quizzes, PYQ patterns, cheat sheets, and high-impact common
+            questions. Take structured training with us and follow a practical 3-6 month roadmap for internship,
+            job-readiness, and freelancing confidence.
           </p>
 
           <p className="mt-3 text-sm text-slate-300">
@@ -66,10 +81,29 @@ function HeroSection() {
             ))}
           </div>
 
+          <div className="mx-auto mt-7 grid max-w-3xl gap-3 sm:grid-cols-2">
+            {heroMetrics.map(({ title, label, Icon }, index) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 0.32 + index * 0.08, duration: 0.35 }}
+                whileHover={{ y: -4 }}
+                className="glass rounded-2xl border border-accent/25 p-4 text-left shadow-glow"
+              >
+                <div className="inline-flex rounded-xl border border-accent/35 bg-accent/10 p-2 text-accent">
+                  <Icon size={18} />
+                </div>
+                <p className="mt-3 font-display text-2xl text-white">{title}</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">{label}</p>
+              </motion.div>
+            ))}
+          </div>
+
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="#units">
-              <Button icon={<ArrowRight size={16} />}>Explore Units</Button>
-            </a>
+            <Link to="/subjects">
+              <Button icon={<ArrowRight size={16} />}>Explore Subjects</Button>
+            </Link>
             <a href={`tel:${BRAND.contact.replace(/\s+/g, '')}`}>
               <Button
                 variant="secondary"

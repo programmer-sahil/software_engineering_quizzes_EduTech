@@ -1,15 +1,20 @@
 export const CAREER_UPSKILLING = {
   title: 'Career Upskilling Opportunity',
-  questions: ['Do you want a remote or hybrid IT job?', 'Do you want to start freelancing?'],
+  questions: [
+    'Remote or hybrid IT job preparation',
+    'Freelancing and portfolio guidance',
+    'Live classes with project-based mentorship',
+    'Affordable student-friendly upskilling',
+  ],
   summary:
-    'Upskill yourself with industry professionals, build real-world projects, and learn trending tools and skills.',
+    'Prepare for exams and career growth together with live classes, project-based mentorship, freelancing guidance, and practical IT skill building.',
   training:
-    'We provide hybrid training through online app recordings, offline project-oriented smart classrooms with AC, and 1:1 doubt-clearing sessions.',
+    'We provide hybrid training through live classes, online app recordings, offline project-oriented smart classrooms with AC, and 1:1 doubt-clearing sessions.',
   courses: ['Data Analytics with Generative AI', 'Data Science with Generative AI'],
   outcome: 'Build skills. Create projects. Move toward your dream job.',
   contactLine: 'Contact us for more.',
   whatsappNumber: '918583058673',
-  whatsappMessage: 'I am interested in Data Analytics course for getting jobs and starting freelancing.',
+  whatsappMessage: 'Hi dada, I am interested / need help in this domain. what is the fees?',
 };
 
 export const getWhatsAppLink = () => {
