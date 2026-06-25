@@ -20,6 +20,10 @@ export const subjects = [
     unitGridDescription:
       'Revise every unit with MCQ practice, PYQ patterns, cheat sheets, and highly important common-question support.',
     badge: 'Existing quiz + PYQ + cheat sheets',
+    disabled: true,
+    disabledLabel: 'Reopens next semester',
+    disabledMessage:
+      'Software Engineering is temporarily disabled for this semester. The section and all study material are kept in place for next semester.',
     units: softwareEngineeringUnits,
   },
   {
@@ -51,7 +55,7 @@ export const findSubject = (subjectId = 'software-engineering') =>
 
 export const findSubjectUnit = (subjectId, unitId) => {
   const subject = findSubject(subjectId);
-  const unit = subject?.units.find((item) => item.id === unitId || `unit-${item.id}` === unitId);
+  const unit = subject?.units.find((item) => String(item.id) === unitId || `unit-${item.id}` === unitId);
 
   return { subject, unit };
 };

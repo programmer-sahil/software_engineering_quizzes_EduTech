@@ -10,6 +10,7 @@ import UnitPage from './pages/UnitPage';
 import SubjectsPage from './pages/SubjectsPage';
 import SubjectUnitsPage from './pages/SubjectUnitsPage';
 import ServicesPage from './pages/ServicesPage';
+import IotLongQuestionsPage from './pages/IotLongQuestionsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/iot" element={<SubjectUnitsPage subjectId="iot" />} />
           <Route path="/software-engineering/unit/:unitId" element={<UnitPage subjectId="software-engineering" />} />
           <Route path="/iot/unit/:unitId" element={<UnitPage subjectId="iot" />} />
+          <Route path="/iot/unit/1/long-questions" element={<IotLongQuestionsPage />} />
           <Route path="/unit/:unitId" element={<UnitPage subjectId="software-engineering" />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

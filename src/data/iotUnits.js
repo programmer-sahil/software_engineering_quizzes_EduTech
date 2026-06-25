@@ -1,3 +1,5 @@
+import { iotUnit1PyqQuestions, iotUnit1Quiz } from './iotUnit1Quiz';
+
 export const iotSubjectInfo = {
   subject: 'Internet of Things',
   semester: 'Diploma 5th Semester',
@@ -163,6 +165,7 @@ export const iotUnits = [
       'Introduction to IoT, IoT ecosystem, technology drivers, business drivers, governance, privacy, security, sensing, and actuation.',
     summary:
       'Introduction to IoT, IoT ecosystem, technology drivers, business drivers, governance, privacy, security, sensing, and actuation.',
+    longAnswersRoute: '/iot/unit/1/long-questions',
     topics: [
       'What is IoT and why is it important?',
       'Elements of an IoT ecosystem',
@@ -295,7 +298,9 @@ export const iotUnits = [
   ...unit,
   topicRevision: unit.topics.map((topic, index) => makeTopicRevision(unit, topic, index)),
   completeQuiz: [],
-  pyqQuiz: [],
+  pyqQuiz: unit.id === '1' ? iotUnit1PyqQuestions : [],
+  pyqQuizTitle: unit.id === '1' ? iotUnit1Quiz.title : undefined,
+  pyqQuizSubtitle: unit.id === '1' ? iotUnit1Quiz.subtitle : undefined,
   cheatSheet: [],
   commonQuestions: [],
   placeholders: {

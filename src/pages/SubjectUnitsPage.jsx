@@ -25,6 +25,31 @@ function SubjectUnitsPage({ subjectId }) {
     );
   }
 
+  if (subject.disabled) {
+    return (
+      <PageTransition className="section-shell py-16">
+        <GlassCard className="p-8 text-center">
+          <span className="rounded-full border border-coral/40 bg-coral/10 px-3 py-1 text-xs font-semibold text-coral">
+            {subject.disabledLabel || 'Temporarily disabled'}
+          </span>
+          <h1 className="mt-5 font-display text-3xl text-white">{subject.name} Is Disabled For Now</h1>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-300">
+            {subject.disabledMessage ||
+              'This subject is temporarily disabled. It remains in the app and can be enabled again later.'}
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link to="/subjects">
+              <Button variant="secondary">View Subjects</Button>
+            </Link>
+            <Link to="/iot">
+              <Button>Continue With IoT</Button>
+            </Link>
+          </div>
+        </GlassCard>
+      </PageTransition>
+    );
+  }
+
   const projectCta =
     subject.id === 'iot'
       ? 'Need an IoT final-year project? Get complete project, report, PPT, and viva QA guidance.'

@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { BookText, BrainCircuit, FileQuestion, HelpCircle } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { BookOpenText, BookText, BrainCircuit, ExternalLink, FileQuestion, HelpCircle } from 'lucide-react';
 import CheatSheetView from '../components/CheatSheetView';
 import CareerUpskillingBanner from '../components/CareerUpskillingBanner';
 import PageTransition from '../components/PageTransition';
@@ -11,7 +11,7 @@ import UnitHeader from '../components/UnitHeader';
 import GlassCard from '../components/ui/GlassCard';
 import { findSubjectUnit } from '../data/subjects';
 
-const studyModes = [
+const defaultStudyModes = [
   {
     id: 'complete-quiz',
     title: 'Start Quiz',
@@ -86,6 +86,19 @@ function UnitPage({ subjectId = 'software-engineering' }) {
   const [activeMode, setActiveMode] = useState('complete-quiz');
 
   const { subject, unit } = useMemo(() => findSubjectUnit(subjectId, unitId), [subjectId, unitId]);
+  const studyModes = useMemo(
+    () =>
+      defaultStudyModes.map((mode) =>
+        mode.id === 'pyq-quiz' && unit?.pyqQuizTitle
+          ? {
+              ...mode,
+              title: unit.pyqQuizTitle,
+              description: unit.pyqQuizSubtitle || mode.description,
+            }
+          : mode
+      ),
+    [unit]
+  );
   const modeDescription = useMemo(() => {
     if (activeMode === 'complete-quiz') {
       return 'Master this unit with a curated full-syllabus challenge designed for accuracy, speed, and exam confidence.';
@@ -98,6 +111,49 @@ function UnitPage({ subjectId = 'software-engineering' }) {
     }
     return 'Review high-probability questions and short-answer prompts before internal and semester exams.';
   }, [activeMode]);
+
+  useEffect(() => {
+    if (unit?.pyqQuiz?.length && !unit.completeQuiz?.length) {
+      setActiveMode('pyq-quiz');
+    } else {
+      setActiveMode('complete-quiz');
+    }
+  }, [subjectId, unitId, unit]);
+
+  if (subject?.disabled) {
+    return (
+      <PageTransition className="section-shell py-16">
+        <GlassCard className="p-8 text-center">
+          <span className="rounded-full border border-coral/40 bg-coral/10 px-3 py-1 text-xs font-semibold text-coral">
+            {subject.disabledLabel || 'Temporarily disabled'}
+          </span>
+          <h1 className="mt-5 font-display text-3xl text-white">{subject.name} Is Disabled For Now</h1>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-300">
+            {subject.disabledMessage ||
+              'This subject is temporarily disabled. It remains in the app and can be enabled again later.'}
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link to="/subjects">
+              <button
+                type="button"
+                className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-accent/70 hover:bg-white/15"
+              >
+                View Subjects
+              </button>
+            </Link>
+            <Link to="/iot">
+              <button
+                type="button"
+                className="rounded-xl bg-gradient-to-r from-accent to-neon px-5 py-3 text-sm font-bold text-slate-900 shadow-glow transition hover:-translate-y-0.5"
+              >
+                Continue With IoT
+              </button>
+            </Link>
+          </div>
+        </GlassCard>
+      </PageTransition>
+    );
+  }
 
   if (!unit) {
     return (
@@ -138,6 +194,33 @@ function UnitPage({ subjectId = 'software-engineering' }) {
         </section>
       ) : null}
 
+      {unit.longAnswersRoute ? (
+        <section className="section-shell mt-6">
+          <div className="rounded-2xl border border-coral/35 bg-gradient-to-br from-coral/10 via-accent/10 to-sky-500/10 p-5 sm:p-6">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-coral">
+                  <BookOpenText size={14} /> Important Long Questions
+                </p>
+                <h2 className="mt-2 font-display text-2xl text-white">🌐 Unit 1 Teaching Notes & Long Answers</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">
+                  Open a separate teaching page with emojis, visual flow cards, examples, conclusions, and important
+                  long answers for class explanation.
+                </p>
+              </div>
+              <a href={unit.longAnswersRoute} target="_blank" rel="noreferrer">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-neon px-5 py-3 text-sm font-bold text-slate-900 shadow-glow transition hover:-translate-y-0.5"
+                >
+                  Open Long Answers <ExternalLink size={16} />
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section-shell mt-6">
         <CareerUpskillingBanner variant="unit" unitTitle={unit.title} />
       </section>
@@ -145,7 +228,9 @@ function UnitPage({ subjectId = 'software-engineering' }) {
 
       <section className="section-shell mt-6">
         <GlassCard className="p-5 sm:p-7">
-          <h2 className="font-display text-2xl text-white">{modeTitles[activeMode]}</h2>
+          <h2 className="font-display text-2xl text-white">
+            {activeMode === 'pyq-quiz' ? unit.pyqQuizTitle || modeTitles[activeMode] : modeTitles[activeMode]}
+          </h2>
           <p className="mt-2 text-sm text-slate-300">{modeDescription}</p>
 
           <div className="mt-6">
@@ -165,7 +250,8 @@ function UnitPage({ subjectId = 'software-engineering' }) {
               unit.pyqQuiz?.length ? (
                 <QuizPlayer
                   key={`${subject?.id}-${unit.id}-pyq`}
-                  title={`${unit.title} - PYQ Quiz`}
+                  title={unit.pyqQuizTitle || `${unit.title} - PYQ Quiz`}
+                  subtitle={unit.pyqQuizSubtitle}
                   questions={unit.pyqQuiz}
                   showUpskillingBanner={false}
                 />

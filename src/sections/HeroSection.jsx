@@ -6,7 +6,7 @@ import Button from '../components/ui/Button';
 import ThreeDBackgroundScene from '../components/ThreeDBackgroundScene';
 
 const techIcons = [
-  { title: 'Software Engineering', subtitle: 'Development, testing & projects', Icon: Braces },
+  { title: 'Software Engineering', subtitle: 'Reopens next semester', Icon: Braces },
   { title: 'Internet of Things', subtitle: 'Protocols, Arduino & sensors', Icon: Cpu },
   { title: 'Quiz Practice', subtitle: 'Unit-wise MCQ revision', Icon: ClipboardCheck },
   { title: 'PYQ + Cheat Sheets', subtitle: 'Fast exam pattern prep', Icon: AppWindow },
@@ -58,9 +58,9 @@ function HeroSection() {
             EduTech Diploma Learning Hub for Computer Science &amp; Technology Students
           </p>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
-            Prepare for Software Engineering, IoT, quizzes, PYQ patterns, cheat sheets, and high-impact common
-            questions. Take structured training with us and follow a practical 3-6 month roadmap for internship,
-            job-readiness, and freelancing confidence.
+            Prepare for IoT, quizzes, PYQ patterns, cheat sheets, and high-impact common questions. Software Engineering
+            stays listed for next semester while you follow a practical 3-6 month roadmap for internship, job-readiness,
+            and freelancing confidence.
           </p>
 
           <p className="mt-3 text-sm text-slate-300">

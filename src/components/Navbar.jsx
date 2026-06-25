@@ -10,7 +10,7 @@ function Navbar({ theme, onThemeToggle }) {
     { to: '/', label: 'Home', Icon: Home },
     { to: '/subjects', label: 'Subjects', Icon: BookOpenCheck },
     { to: '/services', label: 'Services', Icon: BriefcaseBusiness },
-    { to: '/software-engineering', label: 'Software Engineering', Icon: Workflow },
+    { to: '/software-engineering', label: 'Software Engineering', Icon: Workflow, disabled: true },
     { to: '/iot', label: 'IoT', Icon: Cpu },
   ];
 
@@ -38,33 +38,45 @@ function Navbar({ theme, onThemeToggle }) {
           </Link>
 
           <div className="hidden items-center gap-1 rounded-2xl border border-white/10 bg-white/5 p-1 lg:flex">
-            {navLinks.map(({ to, label, Icon }) => (
-              <NavLink
-                key={to}
-                to={to}
-                className={({ isActive }) =>
-                  `group relative overflow-hidden rounded-xl px-3 py-2 text-sm font-semibold transition ${
-                    isActive ? 'text-accent' : 'text-slate-300 hover:text-white'
-                  }`
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    {isActive ? (
-                      <motion.span
-                        layoutId="desktop-nav-active"
-                        className="absolute inset-0 rounded-xl border border-accent/30 bg-accent/10"
-                        transition={{ type: 'spring', stiffness: 420, damping: 34 }}
-                      />
-                    ) : null}
-                    <span className="relative z-10 inline-flex items-center gap-2">
-                      <Icon size={15} className="transition group-hover:scale-110" />
-                      {label}
-                    </span>
-                  </>
-                )}
-              </NavLink>
-            ))}
+            {navLinks.map(({ to, label, Icon, disabled }) =>
+              disabled ? (
+                <span
+                  key={to}
+                  className="relative inline-flex cursor-not-allowed items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold text-slate-500"
+                  aria-disabled="true"
+                  title="Software Engineering reopens next semester"
+                >
+                  <Icon size={15} />
+                  {label}
+                </span>
+              ) : (
+                <NavLink
+                  key={to}
+                  to={to}
+                  className={({ isActive }) =>
+                    `group relative overflow-hidden rounded-xl px-3 py-2 text-sm font-semibold transition ${
+                      isActive ? 'text-accent' : 'text-slate-300 hover:text-white'
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      {isActive ? (
+                        <motion.span
+                          layoutId="desktop-nav-active"
+                          className="absolute inset-0 rounded-xl border border-accent/30 bg-accent/10"
+                          transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                        />
+                      ) : null}
+                      <span className="relative z-10 inline-flex items-center gap-2">
+                        <Icon size={15} className="transition group-hover:scale-110" />
+                        {label}
+                      </span>
+                    </>
+                  )}
+                </NavLink>
+              )
+            )}
             <motion.span
               animate={{ boxShadow: ['0 0 0 rgba(251,113,133,0)', '0 0 24px rgba(251,113,133,0.22)', '0 0 0 rgba(251,113,133,0)'] }}
               transition={{ duration: 2.2, repeat: Infinity }}
@@ -90,22 +102,34 @@ function Navbar({ theme, onThemeToggle }) {
 
         <div className="mt-3 flex items-start justify-between gap-2 lg:hidden">
           <div className="mobile-nav-scroll flex max-w-[calc(100%-96px)] items-center gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-white/5 p-1">
-            {navLinks.map(({ to, label, Icon }) => (
-              <NavLink
-                key={to}
-                to={to}
-                className={({ isActive }) =>
-                  `relative shrink-0 rounded-xl px-3 py-2 text-xs font-semibold transition ${
-                    isActive ? 'bg-accent/10 text-accent shadow-glow' : 'text-slate-300 hover:text-white'
-                  }`
-                }
-              >
-                <span className="inline-flex items-center gap-1.5">
+            {navLinks.map(({ to, label, Icon, disabled }) =>
+              disabled ? (
+                <span
+                  key={to}
+                  className="relative inline-flex shrink-0 cursor-not-allowed items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold text-slate-500"
+                  aria-disabled="true"
+                  title="Software Engineering reopens next semester"
+                >
                   <Icon size={13} />
                   {label}
                 </span>
-              </NavLink>
-            ))}
+              ) : (
+                <NavLink
+                  key={to}
+                  to={to}
+                  className={({ isActive }) =>
+                    `relative shrink-0 rounded-xl px-3 py-2 text-xs font-semibold transition ${
+                      isActive ? 'bg-accent/10 text-accent shadow-glow' : 'text-slate-300 hover:text-white'
+                    }`
+                  }
+                >
+                  <span className="inline-flex items-center gap-1.5">
+                    <Icon size={13} />
+                    {label}
+                  </span>
+                </NavLink>
+              )
+            )}
           </div>
           <div className="flex items-center gap-2">
             <ThemeToggle theme={theme} onToggle={onThemeToggle} compact />

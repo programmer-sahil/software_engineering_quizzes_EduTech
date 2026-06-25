@@ -14,8 +14,8 @@ function SubjectsGrid({ compact = false }) {
         <p className="text-xs uppercase tracking-[0.22em] text-accent">Subjects</p>
         <h2 className="mt-2 font-display text-3xl text-white sm:text-4xl">Choose Your Diploma Subject</h2>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base">
-          Start with Software Engineering or IoT, then move unit by unit through exam-focused preparation, quiz
-          practice, PYQ patterns, cheat sheets, and teacher-guided revision.
+          Start with IoT right now. Software Engineering remains visible but disabled for this semester, ready to
+          reopen with quiz practice, PYQ patterns, cheat sheets, and teacher-guided revision.
         </p>
       </motion.div>
 

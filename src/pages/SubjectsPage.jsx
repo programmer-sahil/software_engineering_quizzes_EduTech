@@ -12,8 +12,8 @@ function SubjectsPage() {
             Pick a subject and start exam-focused preparation.
           </h1>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-300 sm:text-base">
-            Choose Software Engineering for existing complete quiz, PYQ, and cheat-sheet practice, or start IoT with
-            module-wise syllabus guidance for Diploma 5th Semester.
+            Start IoT with module-wise syllabus guidance for Diploma 5th Semester. Software Engineering is kept visible
+            but disabled for this semester so it can reopen next semester.
           </p>
         </div>
       </section>
