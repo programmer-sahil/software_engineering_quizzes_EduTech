@@ -1,0 +1,1416 @@
+{
+  "subject": "Internet of Things",
+  "code": "507/2(N)",
+  "source_sessions": [
+    "Mar 2023",
+    "Jan 2024",
+    "Dec 2024",
+    "Jan 2026"
+  ],
+  "units": [
+    {
+      "id": 1,
+      "name": "Introduction to IoT",
+      "marks": 10,
+      "hours": 10,
+      "module": "A",
+      "mcqs": [
+        {
+          "id": "iot-u1-q1",
+          "q": "What is the full form of IoT?",
+          "options": [
+            "Internet of Technology",
+            "Internet of Things",
+            "Internet of Topology",
+            "Internet of Tools"
+          ],
+          "answer": 1,
+          "explanation": "IoT means Internet of Things: connected physical objects that exchange data.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q2",
+          "q": "IoT is based on which technology?",
+          "options": [
+            "Software only",
+            "Hardware only",
+            "Both hardware and software",
+            "Neither"
+          ],
+          "answer": 2,
+          "explanation": "Connected devices use physical hardware and software together.",
+          "years": [
+            "Mar 2023",
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q3",
+          "q": "Which feature is commonly expected in an IoT device?",
+          "options": [
+            "Always fully autonomous",
+            "Only offline operation",
+            "Remote monitoring or control",
+            "No network connection"
+          ],
+          "answer": 2,
+          "explanation": "Network connectivity permits remote monitoring and control.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q4",
+          "q": "Which is NOT normally an IoT device without additional electronics?",
+          "options": [
+            "Connected smartwatch",
+            "Smart security camera",
+            "Ordinary wooden table",
+            "Connected smart speaker"
+          ],
+          "answer": 2,
+          "explanation": "An ordinary table has no sensors, computing or network connection.",
+          "years": [
+            "Jan 2024"
+          ],
+          "note": "Original paper uses “Table”; other choices differ only in presentation."
+        },
+        {
+          "id": "iot-u1-q5",
+          "q": "Which device is NOT typically an IoT device?",
+          "options": [
+            "Smart lamp",
+            "Smart meter",
+            "Smartwatch",
+            "Basic pocket calculator"
+          ],
+          "answer": 3,
+          "explanation": "A basic calculator does not communicate as a connected IoT endpoint.",
+          "years": [
+            "Dec 2024"
+          ],
+          "note": "Some advanced calculators could connect; the PYQ intends a basic calculator."
+        },
+        {
+          "id": "iot-u1-q6",
+          "q": "Which component captures data from the physical world?",
+          "options": [
+            "Sensor",
+            "Actuator",
+            "Display",
+            "Relay"
+          ],
+          "answer": 0,
+          "explanation": "Sensors convert physical measurements into electrical/digital data.",
+          "years": [
+            "Dec 2024"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q7",
+          "q": "Which device converts a control signal into physical action?",
+          "options": [
+            "Sensor",
+            "Gateway",
+            "Actuator",
+            "Database"
+          ],
+          "answer": 2,
+          "explanation": "An actuator drives physical effects such as motion or switching.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q8",
+          "q": "Which component normally executes an IoT device program?",
+          "options": [
+            "Sensor",
+            "Microcontroller",
+            "Actuator",
+            "Antenna"
+          ],
+          "answer": 1,
+          "explanation": "A microcontroller processes programmed instructions.",
+          "years": [
+            "Jan 2024",
+            "Dec 2024",
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q9",
+          "q": "The “brain” of many embedded IoT devices is the:",
+          "options": [
+            "Microcontroller",
+            "Sensor",
+            "Actuator",
+            "Power cable"
+          ],
+          "answer": 0,
+          "explanation": "The microcontroller controls the device logic.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q10",
+          "q": "Which claim about IoT devices is false?",
+          "options": [
+            "IoT devices may send data",
+            "IoT devices can contain microcontrollers",
+            "IoT may use wireless links",
+            "All IoT devices are completely secure"
+          ],
+          "answer": 3,
+          "explanation": "Security vulnerabilities can exist in connected devices.",
+          "years": [
+            "Jan 2024"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q11",
+          "q": "A common security problem in IoT is:",
+          "options": [
+            "Device hacking and data breaches",
+            "Only manual login",
+            "Excessive local processing",
+            "No data transmission"
+          ],
+          "answer": 0,
+          "explanation": "Weak security can allow unauthorized access to devices and data.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q12",
+          "q": "Where do edge devices usually process IoT data?",
+          "options": [
+            "Locally, near the device",
+            "Only in distant cloud servers",
+            "Only on a user phone",
+            "Only on the manufacturer website"
+          ],
+          "answer": 0,
+          "explanation": "Edge computing brings processing close to the data source.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q13",
+          "q": "Which computing service does IaaS stand for?",
+          "options": [
+            "Internet as a Service",
+            "Infrastructure as a Service",
+            "Information as Software",
+            "Integrated Access Service"
+          ],
+          "answer": 1,
+          "explanation": "IaaS supplies computing infrastructure such as servers and storage.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q14",
+          "q": "The Raspberry Pi 3 uses a processor capable of:",
+          "options": [
+            "16-bit",
+            "32-bit only",
+            "64-bit",
+            "128-bit"
+          ],
+          "answer": 2,
+          "explanation": "The Raspberry Pi 3 BCM2837 has a 64-bit-capable ARM CPU.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u1-q15",
+          "q": "An IoT gateway should commonly provide:",
+          "options": [
+            "Protocol abstraction or translation",
+            "Only screen brightness",
+            "Only paper printing",
+            "Only microphone output"
+          ],
+          "answer": 0,
+          "explanation": "Gateways connect devices/networks that may use different protocols.",
+          "years": [
+            "Jan 2024",
+            "Dec 2024"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "IoT Protocols",
+      "marks": 14,
+      "hours": 14,
+      "module": "A",
+      "mcqs": [
+        {
+          "id": "iot-u2-q1",
+          "q": "What is the full form of MQTT?",
+          "options": [
+            "Message Queuing Telemetry Transport",
+            "Media Query Transport",
+            "Multiple Queue Terminal Transfer",
+            "Mobile Quality Transport"
+          ],
+          "answer": 0,
+          "explanation": "MQTT is a lightweight messaging protocol used in IoT.",
+          "years": [
+            "Mar 2023",
+            "Dec 2024"
+          ],
+          "note": "This expanded wording follows the exam options; MQTT is also described as “MQ Telemetry Transport”."
+        },
+        {
+          "id": "iot-u2-q2",
+          "q": "Which standard underlies Zigbee radio/MAC communication?",
+          "options": [
+            "IEEE 802.11",
+            "IEEE 802.15.4",
+            "IEEE 802.3",
+            "IEEE 802.16"
+          ],
+          "answer": 1,
+          "explanation": "Zigbee builds on IEEE 802.15.4 for low-power wireless networking.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q3",
+          "q": "Which IEEE standard is used for low-rate wireless personal-area networks?",
+          "options": [
+            "IEEE 802.15.4",
+            "IEEE 802.11ac",
+            "IEEE 802.3",
+            "IEEE 11073"
+          ],
+          "answer": 0,
+          "explanation": "IEEE 802.15.4 specifies low-rate WPAN physical and MAC layers.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q4",
+          "q": "How many common Zigbee network topologies are taught?",
+          "options": [
+            "Two",
+            "Three",
+            "Four",
+            "Five"
+          ],
+          "answer": 1,
+          "explanation": "Star, tree and mesh are the three common Zigbee topologies.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q5",
+          "q": "Modbus commonly operates using which communication model?",
+          "options": [
+            "Client–server",
+            "Publish–subscribe only",
+            "Peer-to-peer only",
+            "No request/response"
+          ],
+          "answer": 0,
+          "explanation": "A Modbus client requests data or actions from a Modbus server.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q6",
+          "q": "KNX is mainly used for:",
+          "options": [
+            "Satellite navigation",
+            "Spacecraft control",
+            "Building automation",
+            "Video streaming"
+          ],
+          "answer": 2,
+          "explanation": "KNX controls building systems such as lighting and HVAC.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q7",
+          "q": "SCADA is used mainly for:",
+          "options": [
+            "Supervisory monitoring and control",
+            "Word processing",
+            "Image editing",
+            "Online gaming"
+          ],
+          "answer": 0,
+          "explanation": "SCADA supervises industrial equipment and collects operating data.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q8",
+          "q": "What is the full form of RFID?",
+          "options": [
+            "Radio Frequency Identification",
+            "Rapid Frequency Internet Device",
+            "Remote File Identification Data",
+            "Radio Field Internet Design"
+          ],
+          "answer": 0,
+          "explanation": "RFID identifies tagged objects using radio signals.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q9",
+          "q": "What is the full form of DHCP?",
+          "options": [
+            "Dynamic Host Communication Protocol",
+            "Dynamic Host Configuration Protocol",
+            "Domain Host Configuration Process",
+            "Digital Hardware Control Protocol"
+          ],
+          "answer": 1,
+          "explanation": "DHCP automatically assigns IP configuration to devices.",
+          "years": [
+            "Dec 2024"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q10",
+          "q": "Which layer provides end-to-end transport between devices?",
+          "options": [
+            "Physical layer",
+            "Transport layer",
+            "Application layer",
+            "Data-link layer"
+          ],
+          "answer": 1,
+          "explanation": "The transport layer carries end-to-end data using protocols such as TCP/UDP.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q11",
+          "q": "Which is NOT a recognized IoT communication pattern?",
+          "options": [
+            "Push producer",
+            "Request–response",
+            "Exclusive pairs",
+            "Publish–subscribe"
+          ],
+          "answer": 0,
+          "explanation": "“Push producer” is not the usual model name; request–response, publish–subscribe, push–pull and exclusive pair are common models.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q12",
+          "q": "Which protocol suite connects devices across IP networks?",
+          "options": [
+            "TCP/IP",
+            "HTML",
+            "JPEG",
+            "USB charging"
+          ],
+          "answer": 0,
+          "explanation": "TCP/IP is a communication suite used for interconnected networks.",
+          "years": [
+            "Mar 2023",
+            "Jan 2024",
+            "Dec 2024"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q13",
+          "q": "Which layer supports wireless link framing/MAC control?",
+          "options": [
+            "Application",
+            "Data link",
+            "Presentation",
+            "Session"
+          ],
+          "answer": 1,
+          "explanation": "Wi-Fi and IEEE 802.15.4 use data-link/MAC mechanisms.",
+          "years": [
+            "Mar 2023",
+            "Dec 2024"
+          ],
+          "note": "Wireless transmission also requires a physical layer; the papers phrase this imprecisely."
+        },
+        {
+          "id": "iot-u2-q14",
+          "q": "CoAP is especially designed for:",
+          "options": [
+            "Constrained IoT devices and networks",
+            "Desktop video editing",
+            "Only fiber-optic networks",
+            "Online spreadsheets"
+          ],
+          "answer": 0,
+          "explanation": "CoAP supports lightweight communication on constrained devices.",
+          "years": [
+            "Jan 2024"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u2-q15",
+          "q": "Which tool commonly translates domain names to IP addresses?",
+          "options": [
+            "DNS",
+            "NFC",
+            "PWM",
+            "GPIO"
+          ],
+          "answer": 0,
+          "explanation": "DNS resolves domain names into IP addresses.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "IoT Architecture",
+      "marks": 10,
+      "hours": 10,
+      "module": "B",
+      "mcqs": [
+        {
+          "id": "iot-u3-q1",
+          "q": "What does OIC stand for in the original IoT architecture specification?",
+          "options": [
+            "Open Interconnect Consortium",
+            "Open Internal Controller",
+            "Online Internet Cloud",
+            "Optical Interface Channel"
+          ],
+          "answer": 0,
+          "explanation": "OIC promoted open specifications for interoperable IoT devices.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q2",
+          "q": "The primary aim of OIC architecture is:",
+          "options": [
+            "Faster CPU clocks",
+            "Device interoperability",
+            "More display pixels",
+            "Local file compression"
+          ],
+          "answer": 1,
+          "explanation": "OIC aimed to let devices from different manufacturers communicate.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q3",
+          "q": "IoTivity is best described as a/an:",
+          "options": [
+            "Open-source IoT software framework",
+            "Hardware sensor",
+            "Spreadsheet application",
+            "Mechanical actuator"
+          ],
+          "answer": 0,
+          "explanation": "IoTivity provides software to support device discovery and resource communication.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q4",
+          "q": "In IoTivity, a light bulb can be represented as a:",
+          "options": [
+            "Resource",
+            "Compiler",
+            "Network cable",
+            "Hard disk sector"
+          ],
+          "answer": 0,
+          "explanation": "A resource provides a standard representation for device capabilities.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q5",
+          "q": "Which resource URI could identify an IoT light?",
+          "options": [
+            "/light/1",
+            "192.168 only",
+            "GPIO voltage",
+            "CPU-clock"
+          ],
+          "answer": 0,
+          "explanation": "Resource URIs identify accessible resources.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q6",
+          "q": "Which operation commonly retrieves the current state of a resource?",
+          "options": [
+            "GET",
+            "DELETE",
+            "FLASH",
+            "RESET"
+          ],
+          "answer": 0,
+          "explanation": "GET reads resource data in REST-style interaction.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q7",
+          "q": "What is meant by resource abstraction?",
+          "options": [
+            "Representing diverse hardware with common resource interfaces",
+            "Removing sensors physically",
+            "Disabling networks",
+            "Increasing RAM"
+          ],
+          "answer": 0,
+          "explanation": "It hides device-specific details behind a uniform interface.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q8",
+          "q": "What is connectivity abstraction?",
+          "options": [
+            "Hiding differences between communication transports",
+            "Replacing all wireless links with wires",
+            "Encrypting screen text",
+            "Turning off Bluetooth"
+          ],
+          "answer": 0,
+          "explanation": "Applications need not directly handle every network technology.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q9",
+          "q": "Device discovery means:",
+          "options": [
+            "Finding available devices/resources on a network",
+            "Replacing damaged hardware",
+            "Deleting old settings",
+            "Creating new processors"
+          ],
+          "answer": 0,
+          "explanation": "Discovery lets applications locate accessible devices.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q10",
+          "q": "Which is an example of device-to-gateway deployment?",
+          "options": [
+            "Zigbee sensor → hub → cloud",
+            "Sensor → no connection",
+            "Cloud → keyboard only",
+            "Only local paper records"
+          ],
+          "answer": 0,
+          "explanation": "A gateway links a local device network to other systems.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q11",
+          "q": "Which deployment sends a device’s data directly to a cloud service?",
+          "options": [
+            "Device-to-cloud",
+            "Paper-to-cloud",
+            "No-network",
+            "Only device-to-device"
+          ],
+          "answer": 0,
+          "explanation": "Device-to-cloud connects an IoT endpoint to an online service.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q12",
+          "q": "Which property supports growth to more IoT devices?",
+          "options": [
+            "Scalability",
+            "Isolation from all networks",
+            "No addressing",
+            "Fixed single-device design"
+          ],
+          "answer": 0,
+          "explanation": "Scalability supports an expanding number of devices and services.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q13",
+          "q": "Where is IoT device data typically processed in an architecture?",
+          "options": [
+            "At the edge or cloud",
+            "Only in a keyboard",
+            "Only inside a display",
+            "Nowhere"
+          ],
+          "answer": 0,
+          "explanation": "Processing can take place in embedded controllers, gateways and cloud platforms.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q14",
+          "q": "Why are common IoT architectures useful?",
+          "options": [
+            "They reduce compatibility problems",
+            "They guarantee zero security threats",
+            "They eliminate electricity use",
+            "They remove software"
+          ],
+          "answer": 0,
+          "explanation": "Common standards improve integration and maintainability.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u3-q15",
+          "q": "Which part of an IoTivity-like stack handles protocol-specific networking?",
+          "options": [
+            "Connectivity layer",
+            "Font layer",
+            "Spreadsheet layer",
+            "Printing layer"
+          ],
+          "answer": 0,
+          "explanation": "The connectivity layer deals with network transports.",
+          "years": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Web of Things (WoT)",
+      "marks": 10,
+      "hours": 10,
+      "module": "B",
+      "mcqs": [
+        {
+          "id": "iot-u4-q1",
+          "q": "The main purpose of the Web of Things (WoT) is to:",
+          "options": [
+            "Reduce interoperability",
+            "Increase hardware weight",
+            "Improve usability and interoperability",
+            "Replace all sensors"
+          ],
+          "answer": 2,
+          "explanation": "WoT makes connected devices easier to access using Web technologies.",
+          "years": [
+            "Mar 2023",
+            "Dec 2024"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q2",
+          "q": "WoT mainly uses existing:",
+          "options": [
+            "Web technologies",
+            "Printing mechanisms",
+            "Battery chemistries",
+            "Mechanical gears"
+          ],
+          "answer": 0,
+          "explanation": "WoT applies Web standards to connected things.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q3",
+          "q": "Which is a common Web identifier for a resource?",
+          "options": [
+            "URI",
+            "PWM",
+            "RAM",
+            "ADC"
+          ],
+          "answer": 0,
+          "explanation": "A URI identifies a Web resource.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q4",
+          "q": "Which protocol is widely associated with Web interactions?",
+          "options": [
+            "HTTP",
+            "GPIO",
+            "UART voltage",
+            "USB power"
+          ],
+          "answer": 0,
+          "explanation": "HTTP supports Web requests and responses.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q5",
+          "q": "Which HTTP method usually reads a Web resource?",
+          "options": [
+            "GET",
+            "POST",
+            "DELETE",
+            "PATCH"
+          ],
+          "answer": 0,
+          "explanation": "GET retrieves a resource representation.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q6",
+          "q": "A standard WoT description helps applications:",
+          "options": [
+            "Understand device capabilities",
+            "Change screen color only",
+            "Run without hardware",
+            "Replace networking entirely"
+          ],
+          "answer": 0,
+          "explanation": "Descriptions make capabilities and interaction mechanisms understandable.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q7",
+          "q": "What does WoT middleware mainly provide?",
+          "options": [
+            "Device integration and common interfaces",
+            "A physical battery",
+            "Only a microphone",
+            "A printer tray"
+          ],
+          "answer": 0,
+          "explanation": "Middleware abstracts protocols and provides services to apps.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q8",
+          "q": "In WoT, interoperability means:",
+          "options": [
+            "Different compatible systems can work together",
+            "All sensors must have identical chips",
+            "Devices cannot share data",
+            "One vendor controls all devices"
+          ],
+          "answer": 0,
+          "explanation": "Common Web interfaces connect heterogeneous devices.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q9",
+          "q": "A WoT portal is mainly a:",
+          "options": [
+            "Web interface for monitoring or controlling things",
+            "Power supply",
+            "Physical temperature sensor",
+            "Wireless antenna"
+          ],
+          "answer": 0,
+          "explanation": "Portals show device status and allow authorized interactions.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q10",
+          "q": "Which feature is important in a WoT portal?",
+          "options": [
+            "Device dashboard",
+            "No authentication",
+            "No networking",
+            "Fixed printed report only"
+          ],
+          "answer": 0,
+          "explanation": "A dashboard shows connected-device information.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q11",
+          "q": "What does BI stand for in WoT portals and business analytics?",
+          "options": [
+            "Business Intelligence",
+            "Binary Interface",
+            "Broadband Internet",
+            "Business Input"
+          ],
+          "answer": 0,
+          "explanation": "BI analyzes collected data to support decisions.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q12",
+          "q": "Which is a simple WoT data flow?",
+          "options": [
+            "Device → Web interface → user application",
+            "Paper → transistor → fan",
+            "Mouse → screen only",
+            "No data exchanged"
+          ],
+          "answer": 0,
+          "explanation": "WoT exposes devices to applications through Web interfaces.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q13",
+          "q": "Standardization mainly improves WoT:",
+          "options": [
+            "Interoperability",
+            "Screen brightness",
+            "Motor speed",
+            "Weight"
+          ],
+          "answer": 0,
+          "explanation": "Common specifications let systems use compatible descriptions and interactions.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q14",
+          "q": "Which is a practical WoT use case?",
+          "options": [
+            "Web dashboard monitoring room sensors",
+            "Painting a wall manually",
+            "Typing offline text only",
+            "Disconnecting a thermostat"
+          ],
+          "answer": 0,
+          "explanation": "Web dashboards can monitor connected sensors.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u4-q15",
+          "q": "Which component usually provides Web-facing APIs to mixed-protocol devices?",
+          "options": [
+            "Gateway or middleware",
+            "Cooling fan blade",
+            "Display glass",
+            "Battery case"
+          ],
+          "answer": 0,
+          "explanation": "Gateway/middleware can translate device protocols for applications.",
+          "years": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Arduino",
+      "marks": 6,
+      "hours": 6,
+      "module": "C",
+      "mcqs": [
+        {
+          "id": "iot-u5-q1",
+          "q": "Arduino Uno is mainly a:",
+          "options": [
+            "Network protocol",
+            "Hardware development board",
+            "Cloud database",
+            "Web browser"
+          ],
+          "answer": 1,
+          "explanation": "Arduino Uno is a microcontroller development board.",
+          "years": [
+            "Mar 2023",
+            "Dec 2024"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q2",
+          "q": "The original Arduino IDE 1.x was built mainly using which language?",
+          "options": [
+            "Java",
+            "C/C++ only",
+            "Python",
+            "SQL"
+          ],
+          "answer": 0,
+          "explanation": "The classic IDE application used Java; Arduino sketches themselves use C/C++.",
+          "years": [
+            "Mar 2023",
+            "Dec 2024"
+          ],
+          "note": "This is about the classic IDE; modern Arduino IDE 2.x has a different software architecture."
+        },
+        {
+          "id": "iot-u5-q3",
+          "q": "Which statement correctly describes the Arduino platform?",
+          "options": [
+            "Open-source hardware/software ecosystem",
+            "Only a text editor",
+            "Cannot accept sensors",
+            "Requires an operating system on Uno"
+          ],
+          "answer": 0,
+          "explanation": "Arduino provides open hardware designs and development software.",
+          "years": [
+            "Dec 2024"
+          ],
+          "note": "Rephrased from an imprecise original MCQ about Arduino “IoT devices”."
+        },
+        {
+          "id": "iot-u5-q4",
+          "q": "What type of touch sensing is widely used in smartphones?",
+          "options": [
+            "Capacitive touch",
+            "Only infrared",
+            "Mechanical relay",
+            "Ultrasonic echo"
+          ],
+          "answer": 0,
+          "explanation": "Capacitive sensors detect touch through changes in electrical capacitance.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q5",
+          "q": "Which temperature sensor uses two different metals joined together?",
+          "options": [
+            "Thermocouple",
+            "LDR",
+            "PIR",
+            "Hall sensor"
+          ],
+          "answer": 0,
+          "explanation": "A thermocouple generates a small voltage from a temperature difference.",
+          "years": [
+            "Jan 2024"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q6",
+          "q": "Which function runs once at the start of an Arduino sketch?",
+          "options": [
+            "loop()",
+            "setup()",
+            "digitalRead()",
+            "delay()"
+          ],
+          "answer": 1,
+          "explanation": "setup() is executed once after startup/reset.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q7",
+          "q": "Which function repeats while the Arduino runs?",
+          "options": [
+            "loop()",
+            "setup()",
+            "start()",
+            "halt()"
+          ],
+          "answer": 0,
+          "explanation": "loop() repeats after setup().",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q8",
+          "q": "Which function configures pin 13 as an output?",
+          "options": [
+            "pinMode(13, OUTPUT)",
+            "digitalRead(13)",
+            "delay(13)",
+            "Serial.begin(13)"
+          ],
+          "answer": 0,
+          "explanation": "pinMode sets pin direction.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q9",
+          "q": "Which command turns ON the built-in LED on a typical Uno R3?",
+          "options": [
+            "digitalWrite(13, HIGH)",
+            "digitalWrite(13, LOW)",
+            "analogRead(13)",
+            "delay(13)"
+          ],
+          "answer": 0,
+          "explanation": "HIGH drives the LED output pin high.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q10",
+          "q": "How long does delay(1000) wait?",
+          "options": [
+            "1 millisecond",
+            "1 second",
+            "10 seconds",
+            "100 seconds"
+          ],
+          "answer": 1,
+          "explanation": "delay() counts milliseconds.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q11",
+          "q": "Which command reads an analog input on Arduino Uno?",
+          "options": [
+            "analogRead(A0)",
+            "digitalWrite(A0, HIGH)",
+            "pinMode(A0, OUTPUT)",
+            "Serial.end()"
+          ],
+          "answer": 0,
+          "explanation": "analogRead measures analog voltage on an ADC-capable pin.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q12",
+          "q": "How many digital I/O pins are on the traditional Arduino Uno R3?",
+          "options": [
+            "6",
+            "8",
+            "14",
+            "20"
+          ],
+          "answer": 2,
+          "explanation": "Uno R3 has digital pins 0 through 13.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q13",
+          "q": "What is the main role of a sensor?",
+          "options": [
+            "Measure a physical condition",
+            "Move a motor shaft",
+            "Store program code",
+            "Increase CPU frequency"
+          ],
+          "answer": 0,
+          "explanation": "Sensors provide inputs such as temperature or light.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q14",
+          "q": "Which of these is an actuator?",
+          "options": [
+            "Servo motor",
+            "LDR",
+            "Temperature probe",
+            "PIR sensor"
+          ],
+          "answer": 0,
+          "explanation": "A servo creates controlled mechanical movement.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u5-q15",
+          "q": "Which library supports servo control in basic Arduino examples?",
+          "options": [
+            "Servo.h",
+            "WirePrinter.h",
+            "TimerServer.h",
+            "TextUtils.h"
+          ],
+          "answer": 0,
+          "explanation": "Servo.h provides functions for controlling hobby servos.",
+          "years": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "IoT Applications",
+      "marks": 10,
+      "hours": 10,
+      "module": "C",
+      "mcqs": [
+        {
+          "id": "iot-u6-q1",
+          "q": "Which is NOT itself an IoT application area?",
+          "options": [
+            "Smart city",
+            "Smart grid",
+            "Arduino development board",
+            "Connected healthcare"
+          ],
+          "answer": 2,
+          "explanation": "Arduino is primarily a hardware development platform, not an application domain.",
+          "years": [
+            "Mar 2023"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q2",
+          "q": "Which is NOT normally listed as an IoT platform?",
+          "options": [
+            "Amazon Web Services",
+            "Microsoft Azure",
+            "Salesforce",
+            "Flipkart retail website"
+          ],
+          "answer": 3,
+          "explanation": "Flipkart is an e-commerce website, unlike the listed IoT/cloud platform providers.",
+          "years": [
+            "Jan 2024",
+            "Dec 2024"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q3",
+          "q": "Smart objects are often described as:",
+          "options": [
+            "Networked embedded systems",
+            "Only static nodes",
+            "Only cloud endpoints",
+            "Only virtual screens"
+          ],
+          "answer": 0,
+          "explanation": "Smart objects combine embedded computing with connected capabilities.",
+          "years": [
+            "Jan 2026"
+          ],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q4",
+          "q": "What does IIoT stand for?",
+          "options": [
+            "Industrial Internet of Things",
+            "Indoor Internet of Tools",
+            "Integrated Input Output Technology",
+            "International IoT Transfer"
+          ],
+          "answer": 0,
+          "explanation": "IIoT applies connected sensing and automation to industry.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q5",
+          "q": "A future factory commonly uses:",
+          "options": [
+            "Connected sensors and automation",
+            "Only paper forms",
+            "Only offline manual machines",
+            "No data collection"
+          ],
+          "answer": 0,
+          "explanation": "Smart factories monitor and automate industrial processes.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q6",
+          "q": "Brownfield IoT means:",
+          "options": [
+            "Adding IoT to existing equipment",
+            "Building only brand-new factories",
+            "Removing all old devices",
+            "Designing only websites"
+          ],
+          "answer": 0,
+          "explanation": "Brownfield projects upgrade existing assets with connectivity.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q7",
+          "q": "Which is a Brownfield IoT example?",
+          "options": [
+            "Retrofitting vibration sensors onto an old motor",
+            "Buying only new office chairs",
+            "Turning off factory networks",
+            "Manual paper logging"
+          ],
+          "answer": 0,
+          "explanation": "Retrofit sensors add monitoring to existing machines.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q8",
+          "q": "Which benefit is associated with smart factories?",
+          "options": [
+            "Predictive maintenance",
+            "More unplanned downtime",
+            "Less visibility",
+            "Manual-only monitoring"
+          ],
+          "answer": 0,
+          "explanation": "Sensor data helps detect equipment faults early.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q9",
+          "q": "A smart object may include:",
+          "options": [
+            "Sensor, processor, networking",
+            "Only a printed label",
+            "Only a metal case",
+            "Only a power cable"
+          ],
+          "answer": 0,
+          "explanation": "Processing and communication let physical things behave intelligently.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q10",
+          "q": "Smart irrigation usually uses a:",
+          "options": [
+            "Soil-moisture sensor",
+            "Gaming controller",
+            "Laser printer",
+            "Barcode book"
+          ],
+          "answer": 0,
+          "explanation": "Moisture readings can trigger watering.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q11",
+          "q": "What is an IoT platform mainly used for?",
+          "options": [
+            "Managing device connections and data",
+            "Replacing all electrical wires",
+            "Building chairs",
+            "Compressing word documents"
+          ],
+          "answer": 0,
+          "explanation": "Platforms manage connected endpoints, data and applications.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q12",
+          "q": "What is middleware in an IoT system?",
+          "options": [
+            "Software connecting devices and applications",
+            "A metal switch",
+            "A keyboard driver only",
+            "A rechargeable battery"
+          ],
+          "answer": 0,
+          "explanation": "Middleware provides integration and shared services.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q13",
+          "q": "What does IoT-A mainly provide?",
+          "options": [
+            "IoT Architectural Reference Model",
+            "A specific temperature probe",
+            "Printer firmware",
+            "A motor controller"
+          ],
+          "answer": 0,
+          "explanation": "IoT-A provides reference models for IoT system design.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q14",
+          "q": "What was Hydra in IoT research?",
+          "options": [
+            "Service-oriented device integration middleware",
+            "A Bluetooth headset",
+            "An Arduino board",
+            "A database spreadsheet"
+          ],
+          "answer": 0,
+          "explanation": "Hydra integrated diverse networked embedded devices using middleware.",
+          "years": [],
+          "note": null
+        },
+        {
+          "id": "iot-u6-q15",
+          "q": "Which is a common smart-city application?",
+          "options": [
+            "Smart traffic monitoring",
+            "Manual chalkboard only",
+            "Offline text editor",
+            "No environmental sensors"
+          ],
+          "answer": 0,
+          "explanation": "Connected traffic sensors help manage urban traffic.",
+          "years": [],
+          "note": null
+        }
+      ]
+    }
+  ]
+}

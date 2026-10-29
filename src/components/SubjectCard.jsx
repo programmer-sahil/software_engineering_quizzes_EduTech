@@ -1,56 +1,109 @@
-import { motion } from 'framer-motion';
-import { ArrowUpRight, Cpu, GraduationCap, LockKeyhole } from 'lucide-react';
+import { ArrowRight, Cpu, GraduationCap, Lock, Sparkles, Workflow } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import GlassCard from './ui/GlassCard';
+import { Card, Badge, Button, ShowMoreText } from './ui';
 
 function SubjectCard({ subject, delay = 0 }) {
-  const Icon = subject.id === 'iot' ? Cpu : GraduationCap;
+  const isIoT = subject.id === 'iot';
+  const Icon = isIoT ? Cpu : Workflow;
   const isDisabled = Boolean(subject.disabled);
+  const unitsCount = Array.isArray(subject.units) ? subject.units.length : 0;
 
   return (
-    <GlassCard delay={delay} className={`group h-full p-6 ${isDisabled ? 'opacity-75' : ''}`}>
-      <div className="flex h-full flex-col">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-accent/40 bg-accent/10 text-accent">
-            <Icon size={20} />
-          </div>
-          <div className="flex flex-wrap justify-end gap-2">
-            <span className="rounded-full border border-coral/40 bg-coral/10 px-3 py-1 text-[11px] font-semibold text-coral">
-              {subject.badge}
-            </span>
-            {isDisabled ? (
-              <span className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold text-slate-200">
-                <LockKeyhole size={12} /> {subject.disabledLabel || 'Temporarily disabled'}
+    <Card
+      delay={delay}
+      className={`h-full p-6 sm:p-7 flex flex-col justify-between ${
+        isDisabled ? 'border-brand-border bg-brand-surface/70 opacity-90' : 'border-brand-primary/35 shadow-card'
+      }`}
+    >
+      <div>
+        {/* Header Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div
+              className={`grid h-11 w-11 place-items-center rounded-xl border ${
+                isDisabled
+                  ? 'border-brand-border bg-brand-elevated text-brand-muted'
+                  : 'border-brand-primary/40 bg-brand-primary/10 text-brand-primary'
+              }`}
+            >
+              <Icon size={20} />
+            </div>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-muted">
+                {subject.semester}
               </span>
-            ) : null}
+              <p className="text-[11px] text-brand-muted">{subject.stream}</p>
+            </div>
+          </div>
+
+          <div>
+            {isDisabled ? (
+              <Badge variant="locked" icon={<Lock size={12} />}>
+                {subject.disabledLabel || 'Reopens next semester'}
+              </Badge>
+            ) : (
+              <Badge variant="primary" icon={<Sparkles size={12} />}>
+                Active Subject
+              </Badge>
+            )}
           </div>
         </div>
 
-        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">{subject.semester}</p>
-        <h3 className="mt-2 font-display text-2xl text-white">{subject.name}</h3>
-        <p className="mt-1 text-sm font-medium text-cyan-100">{subject.subtitle}</p>
-        <p className="mt-4 flex-1 text-sm leading-6 text-slate-300">{subject.description}</p>
+        {/* Title & Description */}
+        <h3 className="mt-5 font-display text-2xl font-bold text-brand-heading">
+          {subject.name || subject.title}
+        </h3>
+        <p className="mt-1 text-xs font-medium text-brand-primary">
+          {subject.subtitle}
+        </p>
+        <ShowMoreText
+          text={subject.description}
+          maxLength={140}
+          className="mt-3 text-sm leading-relaxed text-brand-body"
+        />
 
+        {/* Unit Count Pill */}
+        <div className="mt-5 flex items-center gap-3 text-xs text-brand-muted">
+          <span className="rounded-lg border border-brand-border bg-brand-elevated/70 px-2.5 py-1 font-semibold text-brand-body">
+            {unitsCount} Syllabus Units
+          </span>
+          {isIoT ? (
+            <span className="text-brand-primary font-semibold">
+              Modules A, B, C Available
+            </span>
+          ) : (
+            <span>Course materials preserved</span>
+          )}
+        </div>
+      </div>
+
+      {/* Action Footer */}
+      <div className="mt-8 border-t border-brand-border pt-5">
         {isDisabled ? (
-          <motion.span
-            className="mt-6 inline-flex cursor-not-allowed items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-slate-300"
-            aria-disabled="true"
-            title={subject.disabledMessage}
-          >
-            <LockKeyhole size={16} /> {subject.disabledLabel || 'Temporarily disabled'}
-          </motion.span>
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-brand-muted inline-flex items-center gap-1.5">
+              <Lock size={14} className="text-brand-coral" /> Reopens Next Semester
+            </span>
+            <Link to={subject.route}>
+              <Button variant="ghost" size="sm" icon={<Lock size={12} />} className="text-xs text-brand-muted hover:text-brand-heading">
+                View Status
+              </Button>
+            </Link>
+          </div>
         ) : (
-          <Link to={subject.route} className="mt-6">
-            <motion.span
-              whileHover={{ x: 3 }}
-              className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2 text-sm font-semibold text-accent transition group-hover:bg-accent group-hover:text-slate-900"
-            >
-              {subject.cta} <ArrowUpRight size={16} />
-            </motion.span>
-          </Link>
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-brand-primary font-semibold">
+              Ready for Study &amp; Practice
+            </span>
+            <Link to={subject.route}>
+              <Button variant="primary" size="sm" icon={<ArrowRight size={15} />}>
+                {subject.cta || 'Explore Units'}
+              </Button>
+            </Link>
+          </div>
         )}
       </div>
-    </GlassCard>
+    </Card>
   );
 }
 

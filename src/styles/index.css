@@ -1,12 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   Design Tokens & CSS Variables (Phase 03)
+   ========================================================================== */
+
 :root {
   color-scheme: dark;
+
+  /* Palette - Dark Theme: Solid Navy, Charcoal Cards, Cyan/Blue Accents */
+  --bg-canvas: #0A0F1D;
+  --bg-surface: #111C33;
+  --bg-surface-elevated: #172440;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: #38BDF8;
+
+  --text-heading: #FFFFFF;
+  --text-body: #94A3B8;
+  --text-muted: #64748B;
+
+  --color-primary: #38BDF8;
+  --color-primary-rgb: 56, 189, 248;
+  --color-secondary: #818CF8;
+  --color-accent: #0284C7;
+  --color-coral: #FB7185;
+  --color-success: #34D399;
+
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--border-subtle);
+  --shadow-glow: 0 4px 24px -2px rgba(56, 189, 248, 0.15);
+  --focus-ring: 0 0 0 3px rgba(56, 189, 248, 0.35);
 }
+
+html.light {
+  color-scheme: light;
+
+  /* Palette - Light Theme: Soft Off-White, Pure White Cards, Deep Navy Text, Blue Accents */
+  --bg-canvas: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F1F5F9;
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-focus: #0284C7;
+
+  --text-heading: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+
+  --color-primary: #0284C7;
+  --color-primary-rgb: 2, 132, 199;
+  --color-secondary: #6366F1;
+  --color-accent: #0284C7;
+  --color-coral: #E11D48;
+  --color-success: #059669;
+
+  --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 0 0 1px var(--border-subtle);
+  --shadow-glow: 0 4px 20px -2px rgba(2, 132, 199, 0.12);
+  --focus-ring: 0 0 0 3px rgba(2, 132, 199, 0.3);
+}
+
+/* ==========================================================================
+   Base Elements & Fluid Typography
+   ========================================================================== */
 
 html,
 body,
@@ -19,92 +73,110 @@ html {
 }
 
 body {
-  @apply bg-ink text-slate-100 antialiased;
-  background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 1));
+  background-color: var(--bg-canvas);
+  color: var(--text-body);
+  font-family: Inter, Manrope, system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.25);
-  color: #f8fafc;
+  background: rgba(var(--color-primary-rgb), 0.25);
+  color: var(--text-heading);
 }
 
-.glass {
-  @apply border border-white/15 bg-white/5 backdrop-blur-xl;
+/* Accessible Focus Outlines */
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
 }
 
-.grid-overlay {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 36px 36px;
+/* Touch Targets: minimum 44px on interactive controls */
+button,
+a,
+input,
+select {
+  touch-action: manipulation;
 }
+
+/* ==========================================================================
+   Surface & Layout Utilities
+   ========================================================================== */
 
 .section-shell {
   @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
-.icon-3d-card {
-  transform-style: preserve-3d;
-  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.14);
+/* Floating 3D Card */
+.card-3d {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
-.mobile-nav-scroll {
-  scrollbar-width: none;
+@media (hover: hover) and (pointer: fine) {
+  .card-3d:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(var(--color-primary-rgb), 0.35);
+  }
+
+  html.light .card-3d:hover {
+    box-shadow: 0 20px 40px -10px rgba(18, 97, 178, 0.14), 0 0 0 1px rgba(18, 97, 178, 0.3);
+  }
 }
 
-.mobile-nav-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-html.light {
-  color-scheme: light;
-}
-
-html.light body {
-  color: #0f172a;
-  background-color: #f8fdff;
-  background-image: linear-gradient(180deg, #f8fdff 0%, #eef9ff 42%, #ffffff 100%);
-}
-
-html.light .bg-mesh-dark {
-  background-color: #f8fdff;
-  background-image: radial-gradient(circle at 18% 18%, rgba(14, 165, 233, 0.18), transparent 34%),
-    radial-gradient(circle at 82% 8%, rgba(56, 189, 248, 0.14), transparent 28%),
-    radial-gradient(circle at 50% 78%, rgba(2, 132, 199, 0.12), transparent 42%);
+/* Backward-compatible Glass card */
+.glass {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 html.light .glass {
-  border-color: rgba(2, 132, 199, 0.2);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(236, 249, 255, 0.82));
-  box-shadow: 0 24px 70px rgba(14, 116, 144, 0.12);
+  background-color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(18, 97, 178, 0.12);
+  box-shadow: 0 16px 36px -8px rgba(18, 97, 178, 0.08);
+}
+
+.grid-overlay {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
 
 html.light .grid-overlay {
-  background-image: linear-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
+/* Light theme semantic text classes */
 html.light .text-white {
-  color: #0f172a !important;
+  color: var(--text-heading) !important;
 }
 
 html.light .text-slate-100 {
-  color: #111827 !important;
+  color: var(--text-heading) !important;
+}
+
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: var(--text-body) !important;
 }
 
 html.light .text-slate-400 {
-  color: #475569 !important;
-}
-
-html.light .text-slate-300,
-html.light .text-slate-200 {
-  color: #334155 !important;
+  color: var(--text-muted) !important;
 }
 
 html.light .text-accent {
-  color: #0284c7 !important;
+  color: var(--color-primary) !important;
 }
 
-html.light .text-cyan-50,
 html.light .text-cyan-100,
 html.light .text-cyan-200,
 html.light .text-sky-100,
@@ -112,152 +184,104 @@ html.light .text-sky-200 {
   color: #075985 !important;
 }
 
-html.light .text-emerald-100,
+html.light .text-coral {
+  color: var(--color-coral) !important;
+}
+
 html.light .text-emerald-200,
 html.light .text-emerald-300 {
-  color: #047857 !important;
+  color: var(--color-success) !important;
 }
 
-html.light .text-coral,
-html.light .text-rose-300 {
-  color: #e11d48 !important;
-}
-
-html.light .bg-slate-950\/70,
-html.light .bg-slate-950\/60,
-html.light .bg-slate-950\/35,
-html.light .bg-slate-900\/60,
-html.light .bg-slate-900\/50,
-html.light .bg-slate-900\/60 {
-  background-color: rgba(255, 255, 255, 0.84) !important;
-}
-
+/* Light theme background overrides */
 html.light .bg-ink,
 html.light .bg-slate-950 {
-  background-color: #f8fdff !important;
+  background-color: var(--bg-canvas) !important;
 }
 
 html.light .bg-white\/5,
 html.light .bg-white\/10 {
-  background-color: rgba(255, 255, 255, 0.76) !important;
-}
-
-html.light .bg-accent\/10,
-html.light .bg-accent\/12,
-html.light .bg-accent\/15 {
-  background-color: rgba(14, 165, 233, 0.11) !important;
-}
-
-html.light .bg-cyan-500\/10,
-html.light .bg-cyan-500\/12,
-html.light .bg-cyan-500\/14,
-html.light .bg-sky-500\/10,
-html.light .bg-sky-500\/12,
-html.light .bg-sky-500\/15 {
-  background-color: rgba(14, 165, 233, 0.1) !important;
-}
-
-html.light .bg-emerald-400\/10,
-html.light .bg-emerald-400\/12,
-html.light .bg-emerald-500\/15,
-html.light .bg-emerald-500\/18,
-html.light .bg-emerald-500\/20 {
-  background-color: rgba(16, 185, 129, 0.1) !important;
-}
-
-html.light .bg-coral\/10 {
-  background-color: rgba(244, 63, 94, 0.08) !important;
+  background-color: var(--bg-surface-elevated) !important;
 }
 
 html.light .border-white\/10,
 html.light .border-white\/15,
 html.light .border-white\/20 {
-  border-color: rgba(2, 132, 199, 0.16) !important;
+  border-color: var(--border-subtle) !important;
 }
 
-html.light .border-accent\/25,
-html.light .border-accent\/30,
-html.light .border-accent\/35,
-html.light .border-accent\/40,
-html.light .border-accent\/50 {
-  border-color: rgba(2, 132, 199, 0.3) !important;
+html.light .bg-mesh-dark {
+  background-color: var(--bg-canvas);
+  background-image: radial-gradient(circle at 18% 18%, rgba(18, 97, 178, 0.08), transparent 34%),
+    radial-gradient(circle at 82% 8%, rgba(124, 58, 237, 0.06), transparent 28%),
+    radial-gradient(circle at 50% 78%, rgba(2, 132, 199, 0.05), transparent 42%);
 }
 
-html.light .border-cyan-200\/25,
-html.light .border-cyan-200\/35,
-html.light .border-sky-200\/40 {
-  border-color: rgba(2, 132, 199, 0.26) !important;
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .card-3d:hover {
+    transform: none !important;
+  }
 }
 
-html.light .border-emerald-200\/40,
-html.light .border-emerald-200\/50,
-html.light .border-emerald-300\/30,
-html.light .border-emerald-300\/40,
-html.light .border-emerald-300\/45,
-html.light .border-emerald-400\/35,
-html.light .border-emerald-400\/40 {
-  border-color: rgba(5, 150, 105, 0.28) !important;
-}
+/* ==========================================================================
+   Print Optimization Stylesheet (Phase 07)
+   ========================================================================== */
 
-html.light .border-coral\/30,
-html.light .border-coral\/35,
-html.light .border-coral\/40,
-html.light .border-coral\/45,
-html.light .border-coral\/50 {
-  border-color: rgba(225, 29, 72, 0.28) !important;
-}
+@media print {
+  header,
+  footer,
+  nav,
+  aside,
+  button,
+  .print\:hidden,
+  .bg-mesh-dark,
+  [aria-label="Chat on WhatsApp"] {
+    display: none !important;
+  }
 
-html.light .shadow-card {
-  box-shadow: 0 22px 55px rgba(2, 132, 199, 0.13) !important;
-}
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
 
-html.light .shadow-glow {
-  box-shadow: 0 0 42px rgba(14, 165, 233, 0.22) !important;
-}
+  .print-reader-sheet {
+    position: static !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 
-html.light .icon-3d-card {
-  box-shadow: 0 14px 35px rgba(14, 165, 233, 0.15);
-}
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+    color: #000000 !important;
+  }
 
-html.light header {
-  background: rgba(255, 255, 255, 0.82) !important;
-  border-color: rgba(2, 132, 199, 0.16) !important;
-  box-shadow: 0 12px 35px rgba(14, 116, 144, 0.1);
-}
+  article, li, .rounded-2xl, .rounded-3xl {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
 
-html.light footer {
-  background: linear-gradient(180deg, rgba(240, 249, 255, 0.72), rgba(255, 255, 255, 0.92)) !important;
-  border-color: rgba(2, 132, 199, 0.14) !important;
-}
-
-html.light button,
-html.light a {
-  text-decoration-color: rgba(2, 132, 199, 0.35);
-}
-
-html.light .bg-gradient-to-r.from-accent,
-html.light .bg-gradient-to-br.from-accent {
-  color: #082f49 !important;
-}
-
-html.light .bg-gradient-to-br.from-emerald-500\/18,
-html.light .bg-gradient-to-br.from-accent\/12,
-html.light .bg-gradient-to-br.from-accent\/15 {
-  background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(224, 247, 255, 0.78), rgba(240, 253, 250, 0.72)) !important;
-}
-
-html.light .hover\:text-white:hover {
-  color: #0284c7 !important;
-}
-
-html.light .hover\:bg-white\/10:hover {
-  background-color: rgba(14, 165, 233, 0.1) !important;
-}
-
-html.light .group:hover .group-hover\:bg-accent {
-  background-color: #0ea5e9 !important;
-}
-
-html.light .group:hover .group-hover\:text-slate-900 {
-  color: #ffffff !important;
+  p, span, li {
+    color: #111827 !important;
+  }
 }

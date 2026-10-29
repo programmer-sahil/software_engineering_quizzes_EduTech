@@ -1,41 +1,64 @@
-import { motion } from 'framer-motion';
 import { BookOpenText, ClipboardList, FileQuestion, GraduationCap, Layers, Lightbulb } from 'lucide-react';
-import GlassCard from '../components/ui/GlassCard';
+import { Card, SectionHeading } from '../components/ui';
 
 const features = [
-  { title: 'Unit-wise Learning', description: 'Choose any unit and jump directly into focused study mode.', icon: Layers },
-  { title: 'Complete Quiz Practice', description: 'One-question-at-a-time MCQ experience with progress and score.', icon: ClipboardList },
-  { title: 'PYQ-based Preparation', description: 'Practice previous-year question patterns in quiz flow.', icon: FileQuestion },
-  { title: 'Fast Revision Sheets', description: 'Beautiful cheat sheets with key terms and quick recall.', icon: BookOpenText },
-  { title: 'Teacher Guidance', description: 'Common-question focus, live support, and beginner-friendly revision.', icon: GraduationCap },
-  { title: 'Career Upskilling', description: 'Affordable project mentoring for freelancing and IT job growth.', icon: Lightbulb },
+  {
+    title: 'Unit-Wise Syllabus',
+    description: 'Focus on one unit at a time with verified syllabus topics, marks, and module weights.',
+    icon: Layers,
+  },
+  {
+    title: 'Previous Year Questions',
+    description: 'Practice diploma exam pattern MCQs from Jan 2026, Dec 2024, and Mar 2023 with verified keys.',
+    icon: FileQuestion,
+  },
+  {
+    title: 'Fast Recall Cheat Sheets',
+    description: 'Smart revision cards with essential definitions, formulas, and 5-mark short note summaries.',
+    icon: BookOpenText,
+  },
+  {
+    title: 'Exam Flow Diagrams',
+    description: 'Visual step diagrams (Sensors → Actuators → Network → Cloud) for high-scoring long answers.',
+    icon: ClipboardList,
+  },
+  {
+    title: '1:1 Doubt Mentoring',
+    description: 'Get personal academic clarity and project advice directly from an experienced tutor.',
+    icon: GraduationCap,
+  },
+  {
+    title: 'Final-Year Project Support',
+    description: 'End-to-end guidance for major projects, documentation, PPTs, and technical viva preparation.',
+    icon: Lightbulb,
+  },
 ];
 
 function FeatureCards() {
   return (
-    <section className="section-shell mt-14">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mb-7"
-      >
-        <p className="text-xs uppercase tracking-[0.22em] text-accent">Features</p>
-        <h2 className="mt-2 font-display text-3xl text-white sm:text-4xl">Your Student-Friendly Study Toolkit</h2>
-      </motion.div>
+    <section className="section-shell mt-16 sm:mt-24">
+      <SectionHeading
+        eyebrow="Study Features"
+        title="Everything You Need for Diploma Success"
+        description="Curated tools and resources structured specifically for diploma computer science examination standards."
+      />
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => {
           const Icon = feature.icon;
 
           return (
-            <GlassCard key={feature.title} delay={index * 0.07} className="p-5">
-              <div className="mb-4 inline-flex rounded-xl border border-accent/35 bg-accent/10 p-2 text-accent">
-                <Icon size={18} />
+            <Card key={feature.title} delay={index * 0.05} className="p-6">
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-brand-primary/30 bg-brand-primary/10 text-brand-primary">
+                <Icon size={20} />
               </div>
-              <h3 className="font-display text-xl text-white">{feature.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-300">{feature.description}</p>
-            </GlassCard>
+              <h3 className="font-display text-lg font-bold text-brand-heading">
+                {feature.title}
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-brand-body">
+                {feature.description}
+              </p>
+            </Card>
           );
         })}
       </div>

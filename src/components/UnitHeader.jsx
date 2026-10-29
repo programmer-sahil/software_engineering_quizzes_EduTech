@@ -1,54 +1,185 @@
-import { motion } from 'framer-motion';
-import { ArrowLeft, CircleCheckBig, Trophy } from 'lucide-react';
+import { useState } from 'react';
+import {
+  ArrowLeft,
+  BookOpenText,
+  Check,
+  ChevronRight,
+  Clock,
+  FileBadge2,
+  FileQuestion,
+  HelpCircle,
+  Layers,
+  Printer,
+  Share2,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Button from './ui/Button';
+import { Button, Card, ShowMoreText } from './ui';
 
-function UnitHeader({ title, subject, unit, backTo = '/', backLabel = 'Back to Home' }) {
+/**
+ * Clean Unit Header
+ * Spec: Unit Title | Module | Hours | Marks
+ * Implements progressive disclosure on description.
+ */
+function UnitHeader({
+  title,
+  subject,
+  unit,
+  backTo = '/iot',
+  backLabel = 'Back to Subject',
+  onStartQuiz,
+  onStartPractice,
+  onStartLongQuestions,
+  onStartCheatSheets,
+}) {
+  const [copied, setCopied] = useState(false);
+  const handleStart = onStartQuiz || onStartPractice;
+
+  const handleShare = async () => {
+    try {
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(window.location.href);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }
+    } catch {}
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
-    <motion.section
-      className="section-shell pt-10"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35 }}
-    >
-      <div className="glass rounded-2xl p-5 sm:p-7">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-accent">Revision Workspace</p>
-            <h1 className="mt-2 font-display text-2xl text-white sm:text-3xl">{title}</h1>
-            {subject ? (
-              <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold text-cyan-100">
-                <span className="rounded-full border border-accent/35 bg-accent/10 px-3 py-1 text-accent">
-                  {subject.shortName}
-                </span>
-                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1">{subject.semester}</span>
-                {unit?.module ? (
-                  <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1">Module {unit.module}</span>
-                ) : null}
-              </div>
+    <section className="section-shell pt-6 sm:pt-10">
+      {/* Compact Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="mb-3.5">
+        <ol className="flex flex-wrap items-center gap-1.5 text-xs font-medium text-brand-muted">
+          <li>
+            <Link to="/subjects" className="hover:text-brand-heading transition-colors">
+              Subjects
+            </Link>
+          </li>
+          <li aria-hidden="true" className="select-none">
+            <ChevronRight size={12} className="text-brand-muted/60" />
+          </li>
+          <li>
+            <Link to={subject?.route || '/iot'} className="hover:text-brand-heading transition-colors">
+              {subject?.shortTitle || subject?.name || 'Subject'}
+            </Link>
+          </li>
+          <li aria-hidden="true" className="select-none">
+            <ChevronRight size={12} className="text-brand-muted/60" />
+          </li>
+          <li className="text-brand-primary font-bold" aria-current="page">
+            {unit?.shortTitle || `Unit ${unit?.id}`}
+          </li>
+        </ol>
+      </nav>
+
+      {/* Main Clean Header Card */}
+      <Card hover={false} className="p-5 sm:p-7 border-brand-border bg-brand-surface shadow-card">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-3xl space-y-3">
+            {/* Core Metadata Ribbon: Unit Title | Module | Hours | Marks */}
+            <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
+              <span className="rounded-lg bg-brand-primary/10 px-2.5 py-1 text-brand-primary">
+                {subject?.shortTitle || 'IoT'} • Unit {unit?.id}
+              </span>
+              <span className="rounded-lg bg-brand-elevated px-2.5 py-1 text-brand-body">
+                Module {unit?.module || 'A'}
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-lg bg-brand-elevated px-2.5 py-1 text-brand-body">
+                <Clock size={12} className="text-brand-primary" /> {unit?.hours} Hours
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-lg bg-brand-elevated px-2.5 py-1 text-brand-coral">
+                <FileBadge2 size={12} /> {unit?.marks} Marks
+              </span>
+            </div>
+
+            {/* Unit Title */}
+            <h1 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-brand-heading">
+              {title}
+            </h1>
+
+            {/* Progressive Disclosure Description */}
+            {unit?.summary || unit?.description ? (
+              <ShowMoreText
+                text={unit.summary || unit.description}
+                maxLength={140}
+                className="text-xs sm:text-sm leading-relaxed text-brand-body"
+              />
             ) : null}
+
+            {/* Clear Primary Actions per Step 8 */}
+            <div className="pt-2 flex flex-wrap items-center gap-2.5">
+              <Button
+                variant="primary"
+                size="sm"
+                icon={<FileQuestion size={14} />}
+                onClick={handleStart}
+              >
+                Practice PYQ MCQs
+              </Button>
+
+              {onStartLongQuestions && (
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  icon={<HelpCircle size={14} />}
+                  onClick={onStartLongQuestions}
+                >
+                  Study Long Questions
+                </Button>
+              )}
+
+              {onStartCheatSheets && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  icon={<BookOpenText size={14} />}
+                  onClick={onStartCheatSheets}
+                  className="border border-brand-border bg-brand-elevated/60 text-brand-body hover:text-brand-heading"
+                >
+                  Open Cheat Sheets
+                </Button>
+              )}
+            </div>
           </div>
-          <Link to={backTo}>
-            <Button variant="secondary" icon={<ArrowLeft size={16} />}>
-              {backLabel}
-            </Button>
-          </Link>
-        </div>
-        {unit?.summary ? <p className="mt-5 max-w-4xl text-sm leading-6 text-slate-300">{unit.summary}</p> : null}
-        {unit?.hours || unit?.marks ? (
-          <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-200">
-            {unit.hours ? <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1">{unit.hours} Hours</span> : null}
-            {unit.marks ? <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1">{unit.marks} Marks</span> : null}
+
+          {/* Right Header Actions (Back, Share, Print) */}
+          <div className="flex flex-wrap items-center gap-2 self-start lg:flex-col lg:items-end">
+            <Link to={backTo}>
+              <Button variant="ghost" size="sm" icon={<ArrowLeft size={14} />} className="text-xs">
+                {backLabel}
+              </Button>
+            </Link>
+
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={handleShare}
+                aria-label="Share page link"
+                title="Copy link"
+                className="inline-flex h-8 items-center gap-1 rounded-lg border border-brand-border bg-brand-elevated px-2.5 text-xs text-brand-body hover:text-brand-heading transition"
+              >
+                {copied ? <Check size={13} className="text-brand-success" /> : <Share2 size={13} />}
+                <span>{copied ? 'Copied' : 'Share'}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={handlePrint}
+                aria-label="Print summary"
+                title="Print"
+                className="inline-flex h-8 items-center gap-1 rounded-lg border border-brand-border bg-brand-elevated px-2.5 text-xs text-brand-body hover:text-brand-heading transition"
+              >
+                <Printer size={13} />
+                <span>Print</span>
+              </button>
+            </div>
           </div>
-        ) : null}
-        <div className="mt-5 inline-flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-emerald-400/10 px-4 py-2 text-sm text-emerald-300">
-          <CircleCheckBig size={16} /> Stay consistent: revise one section daily and attempt timed MCQs.
         </div>
-        <div className="mt-3 inline-flex items-center gap-2 rounded-xl border border-amber-400/40 bg-amber-400/10 px-4 py-2 text-xs text-amber-200">
-          <Trophy size={14} /> Study Badge: Target 80%+ score in both Complete and PYQ quizzes.
-        </div>
-      </div>
-    </motion.section>
+      </Card>
+    </section>
   );
 }
 

@@ -1,79 +1,70 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { BRAND } from '../data/units';
 import sahilMain from '../../assets/profile/sahil-main.jpg';
 import teachingMain from '../../assets/profile/teaching-main.jpg';
+import { Card, SectionHeading } from '../components/ui';
 
 const trustHighlights = [
-  '100% Common Question Focus',
+  'Exam-Pattern Question Focus',
   '400+ Students Taught',
   'Industrial Experience',
   'Top Engineering College Teaching Experience',
 ];
 
 function SignatureSection() {
-  return (
-    <section className="section-shell mt-16">
-      <motion.div
-        className="glass rounded-2xl p-6 sm:p-8"
-        initial={{ opacity: 0, y: 22 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45 }}
-        viewport={{ once: true }}
-      >
-        <p className="text-xs uppercase tracking-[0.2em] text-accent">Expert Academic Guidance</p>
-        <h3 className="mt-2 max-w-4xl font-display text-2xl leading-tight text-white sm:text-3xl">
-          Get Exam-Focused Preparation with Highly Important Common Questions
-        </h3>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-300 sm:text-[15px]">
-          Built by {BRAND.madeBy}, a Freelance AI Developer and Coding Tutor, focused on helping diploma students
-          prepare with unit-wise clarity, common questions, quizzes, PYQ practice, and cheat sheets. Students get simple
-          concept clarity, structured revision support, and practical career guidance from a mentor with industrial and
-          top engineering college teaching experience.
-        </p>
+  const shouldReduceMotion = useReducedMotion();
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          <motion.figure
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
-            className="overflow-hidden rounded-2xl border border-white/15 bg-slate-950/35"
-          >
-            <img src={sahilMain} alt={`${BRAND.madeBy} profile`} className="h-52 w-full object-cover sm:h-64" />
-            <figcaption className="px-4 py-3 text-xs text-slate-200 sm:text-sm">
-              {BRAND.madeBy} - Freelance AI Developer and dedicated coding mentor.
+  return (
+    <section className="section-shell mt-16 sm:mt-24">
+      <Card hover={false} className="p-6 sm:p-10">
+        <SectionHeading
+          eyebrow="Academic Mentorship"
+          title="Meet Your Instructor &amp; Mentor"
+          description={`Guided by ${BRAND.madeBy}, ${BRAND.subtitle}. Bringing industrial development practice and college teaching experience directly to your diploma exam preparation.`}
+        />
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {/* Instructor Image 1 */}
+          <figure className="overflow-hidden rounded-2xl border border-brand-border bg-brand-elevated/40">
+            <img
+              src={sahilMain}
+              alt={`${BRAND.madeBy} - AI Developer and Coding Tutor`}
+              loading="lazy"
+              className="h-60 sm:h-72 w-full object-cover object-top transition-transform duration-500 hover:scale-102"
+            />
+            <figcaption className="p-4 text-xs leading-relaxed text-brand-body">
+              <span className="font-bold text-brand-heading">{BRAND.madeBy}</span> — Dedicated coding tutor and
+              developer passionate about helping diploma students master programming, hardware interfacing, and exams.
             </figcaption>
-          </motion.figure>
-          <motion.figure
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.08 }}
-            viewport={{ once: true }}
-            className="overflow-hidden rounded-2xl border border-white/15 bg-slate-950/35"
-          >
-            <img src={teachingMain} alt={`${BRAND.madeBy} teaching session`} className="h-52 w-full object-cover sm:h-64" />
-            <figcaption className="px-4 py-3 text-xs text-slate-200 sm:text-sm">
-              Practical classroom guidance with project-oriented training and doubt clearing.
+          </figure>
+
+          {/* Instructor Image 2 */}
+          <figure className="overflow-hidden rounded-2xl border border-brand-border bg-brand-elevated/40">
+            <img
+              src={teachingMain}
+              alt={`${BRAND.madeBy} classroom teaching session`}
+              loading="lazy"
+              className="h-60 sm:h-72 w-full object-cover object-center transition-transform duration-500 hover:scale-102"
+            />
+            <figcaption className="p-4 text-xs leading-relaxed text-brand-body">
+              Practical classroom guidance with project-oriented training, 1:1 doubt-clearing sessions, and career
+              upskilling.
             </figcaption>
-          </motion.figure>
+          </figure>
         </div>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Credentials Badges */}
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {trustHighlights.map((item, index) => (
-            <motion.div
+            <div
               key={item}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.07 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -3, scale: 1.01 }}
-              className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center text-xs font-medium text-slate-100 sm:text-sm"
+              className="rounded-xl border border-brand-border bg-brand-elevated/60 px-4 py-3 text-center text-xs font-semibold text-brand-heading shadow-sm"
             >
               {item}
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </Card>
     </section>
   );
 }

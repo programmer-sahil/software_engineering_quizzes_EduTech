@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:parity": "node --loader ./scripts/loader.mjs scripts/verify-content-parity.js"
   },
   "dependencies": {
     "@react-three/drei": "^9.121.4",

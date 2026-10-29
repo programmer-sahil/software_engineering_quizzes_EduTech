@@ -1,23 +1,27 @@
-import { ArrowLeft, BookOpenText, ExternalLink, Lightbulb, Presentation } from 'lucide-react';
+import { ArrowLeft, BookOpen, ExternalLink, Lightbulb, Presentation } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
-import Button from '../components/ui/Button';
-import GlassCard from '../components/ui/GlassCard';
+import { Card, SectionHeading, Badge, Button } from '../components/ui';
 import { unit1LongAnswers } from '../data/iotLongAnswers';
 
 function VisualFlow({ visual }) {
+  if (!visual || !Array.isArray(visual.steps)) return null;
+
   return (
-    <div className="rounded-2xl border border-accent/25 bg-accent/10 p-4">
-      <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-        <Presentation size={14} /> {visual.title}
+    <div className="rounded-2xl border border-brand-primary/30 bg-brand-primary/5 p-4 sm:p-5">
+      <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-primary">
+        <Presentation size={15} /> {visual.title || 'Step Visual Flow'}
       </p>
-      <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-4 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-5">
         {visual.steps.map((step, index) => (
-          <div key={step} className="relative rounded-xl border border-white/15 bg-white/10 px-3 py-3 text-center text-sm font-semibold text-slate-100">
-            <span className="mb-2 inline-grid h-7 w-7 place-items-center rounded-full bg-accent text-xs text-slate-900">
+          <div
+            key={step}
+            className="rounded-xl border border-brand-border bg-brand-surface p-3 text-center shadow-sm"
+          >
+            <span className="mb-2 inline-grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-brand-primary to-brand-accent text-xs font-bold text-slate-950">
               {index + 1}
             </span>
-            <p>{step}</p>
+            <p className="text-xs font-semibold text-brand-heading">{step}</p>
           </div>
         ))}
       </div>
@@ -27,70 +31,82 @@ function VisualFlow({ visual }) {
 
 function LongAnswerBlock({ answer, index }) {
   return (
-    <GlassCard className="scroll-mt-28 p-5 sm:p-7" delay={index * 0.04}>
+    <Card hover={false} className="scroll-mt-28 p-5 sm:p-8 border-brand-border" delay={index * 0.04}>
       <article id={answer.id}>
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between border-b border-brand-border pb-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Long Answer {index + 1}</p>
-            <h2 className="mt-2 font-display text-2xl leading-tight text-white sm:text-3xl">
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
+              Long Answer {index + 1}
+            </span>
+            <h2 className="mt-1 font-display text-xl sm:text-2xl font-bold text-brand-heading">
               <span className="mr-2">{answer.emoji}</span>
               {answer.title}
             </h2>
           </div>
-          <div className="rounded-2xl border border-coral/30 bg-coral/10 px-4 py-3 text-sm font-semibold text-coral">
-            Teaching Focus: {answer.teachingFocus}
-          </div>
+          {answer.teachingFocus ? (
+            <span className="rounded-xl border border-brand-coral/30 bg-brand-coral/10 px-3.5 py-2 text-xs font-semibold text-brand-coral">
+              Teaching Focus: {answer.teachingFocus}
+            </span>
+          ) : null}
         </div>
 
-        <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_0.8fr]">
-          <div className="space-y-4">
-            {answer.intro.map((paragraph) => (
-              <p key={paragraph} className="text-sm leading-7 text-slate-300 sm:text-[15px]">
+        <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_0.85fr]">
+          <div className="space-y-3.5">
+            {answer.intro?.map((paragraph) => (
+              <p key={paragraph} className="text-xs sm:text-sm leading-relaxed text-brand-body">
                 {paragraph}
               </p>
             ))}
           </div>
-          <VisualFlow visual={answer.visual} />
+          {answer.visual ? <VisualFlow visual={answer.visual} /> : null}
         </div>
 
-        <div className="mt-6 space-y-5">
-          {answer.sections.map((section) => (
-            <section key={section.heading} className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
-              <h3 className="font-display text-xl text-white">{section.heading}</h3>
-              <ul className="mt-4 space-y-3">
-                {section.bullets.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-6 text-slate-300">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
+        {answer.sections?.map((section) => (
+          <div key={section.heading} className="mt-6 rounded-2xl border border-brand-border bg-brand-elevated/40 p-4 sm:p-5">
+            <h3 className="font-display text-base sm:text-lg font-bold text-brand-heading">
+              {section.heading}
+            </h3>
+            <ul className="mt-3 space-y-2.5">
+              {section.bullets?.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-xs sm:text-sm leading-relaxed text-brand-body">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
-        <div className="mt-6 rounded-2xl border border-emerald-300/35 bg-emerald-400/10 p-4">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-200">
-            <Lightbulb size={14} /> Conclusion
-          </p>
-          <p className="mt-2 text-sm leading-7 text-slate-200">{answer.conclusion}</p>
-        </div>
+        {answer.conclusion ? (
+          <div className="mt-6 rounded-2xl border border-brand-success/35 bg-brand-success/10 p-4 text-xs sm:text-sm text-brand-heading">
+            <p className="inline-flex items-center gap-1.5 font-bold text-brand-success">
+              <Lightbulb size={15} /> Conclusion
+            </p>
+            <p className="mt-1.5 leading-relaxed text-brand-body">{answer.conclusion}</p>
+          </div>
+        ) : null}
       </article>
-    </GlassCard>
+    </Card>
   );
 }
 
 function IotLongQuestionsPage() {
   return (
     <PageTransition>
-      <section className="section-shell pt-10">
-        <div className="glass rounded-2xl p-5 sm:p-7">
+      <section className="section-shell pt-10 sm:pt-14">
+        <Card hover={false} className="p-6 sm:p-8 border-brand-primary/35 shadow-card">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-accent">Diploma 5th Semester IoT</p>
-              <h1 className="mt-2 font-display text-3xl leading-tight text-white sm:text-5xl">
-                🌐 Unit 1: IoT Important Long Answers
+              <div className="flex items-center gap-2">
+                <Badge variant="primary">Diploma 5th Semester</Badge>
+                <span className="text-xs text-brand-muted">Internet of Things</span>
+              </div>
+              <h1 className="mt-3 font-display text-2xl sm:text-4xl font-extrabold text-brand-heading">
+                🌐 Unit 1: Important Long Answers &amp; Visual Flows
               </h1>
+              <p className="mt-2 text-xs sm:text-sm text-brand-body leading-relaxed max-w-2xl">
+                Structured explanations with diagrams and memory models for high-scoring semester exam answers.
+              </p>
             </div>
             <Link to="/iot/unit/1">
               <Button variant="secondary" icon={<ArrowLeft size={16} />}>
@@ -98,46 +114,14 @@ function IotLongQuestionsPage() {
               </Button>
             </Link>
           </div>
-        </div>
+        </Card>
       </section>
 
-      <section className="section-shell mt-8">
-        <GlassCard className="p-5">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            <BookOpenText size={14} /> Quick Teaching Index
-          </p>
-          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-            {unit1LongAnswers.map((answer, index) => (
-              <a
-                key={answer.id}
-                href={`#${answer.id}`}
-                className="rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-sm font-semibold leading-5 text-slate-200 transition hover:border-accent/35 hover:bg-accent/10 hover:text-accent"
-              >
-                <span className="mr-2">{answer.emoji}</span>
-                {index + 1}. {answer.title}
-              </a>
-            ))}
-          </div>
-        </GlassCard>
-      </section>
-
-      <section className="section-shell mt-8 space-y-6">
+      {/* Long Answers List */}
+      <section className="section-shell mt-8 sm:mt-10 mb-20 space-y-6">
         {unit1LongAnswers.map((answer, index) => (
           <LongAnswerBlock key={answer.id} answer={answer} index={index} />
         ))}
-      </section>
-
-      <section className="section-shell mt-8">
-        <div className="rounded-2xl border border-accent/35 bg-gradient-to-br from-accent/15 via-sky-500/10 to-emerald-400/10 p-5 sm:p-7">
-          <h2 className="font-display text-2xl text-white">📌 Teaching Tip</h2>
-          <p className="mt-2 text-sm leading-7 text-slate-300">
-            Open this page in a separate tab, use the index to jump between answers, and explain each visual flow before
-            reading the bullet points. Students can revise the same topics using the flashcards and MCQs on Unit 1.
-          </p>
-          <a href="/iot/unit/1" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent">
-            Open Unit 1 Revision Page <ExternalLink size={15} />
-          </a>
-        </div>
       </section>
     </PageTransition>
   );
