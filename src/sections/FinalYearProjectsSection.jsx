@@ -90,7 +90,20 @@ function FinalYearProjectsSection() {
       </div>
 
       {/* Step-by-Step Major Project Workflow */}
-      <div className="mt-14 rounded-3xl border border-brand-border bg-brand-surface p-6 sm:p-10 shadow-card space-y-8">
+      <div className="relative overflow-hidden mt-14 rounded-3xl border border-brand-border bg-brand-surface p-6 sm:p-10 shadow-card">
+        {/* Atmospheric HD Tech Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <img
+            src="/assets/projects/project1.jpg"
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-cover object-center opacity-[0.04] dark:opacity-[0.10] filter blur-[1px] scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-surface via-brand-surface/90 to-brand-surface/75" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-primary/10 via-transparent to-transparent" />
+        </div>
+
+        <div className="relative z-10 space-y-8">
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
             Step-by-Step Guidance
@@ -139,6 +152,7 @@ function FinalYearProjectsSection() {
             <MessageCircle size={15} />
             <span>Consult on WhatsApp</span>
           </a>
+        </div>
         </div>
       </div>
 

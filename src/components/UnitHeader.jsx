@@ -76,8 +76,20 @@ function UnitHeader({
       </nav>
 
       {/* Main Clean Header Card */}
-      <Card hover={false} className="p-5 sm:p-7 border-brand-border bg-brand-surface shadow-card">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+      <Card hover={false} className="relative overflow-hidden p-5 sm:p-7 border-brand-border bg-brand-surface shadow-card">
+        {/* Subtle Atmospheric HD Tech Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <img
+            src="/assets/teaching/teaching8.jpg"
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-cover object-center opacity-[0.04] dark:opacity-[0.10] filter blur-[1px] scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-surface via-brand-surface/90 to-brand-surface/75" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-primary/10 via-transparent to-transparent" />
+        </div>
+
+        <div className="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-3xl space-y-3">
             {/* Core Metadata Ribbon: Unit Title | Module | Hours | Marks */}
             <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">

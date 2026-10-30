@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import Card from './ui/Card';
 import Button from './ui/Button';
+import { openInstagramReel, getInstagramReelAppUrl } from '../utils/instagramDeepLink';
 
 // Category icon selector for individual, rich topic visuals
 function TopicIcon({ category }) {
@@ -137,7 +138,8 @@ function ReelCard({ reel, onPlayModal }) {
           href={reel.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 px-3 py-2 text-xs font-bold text-white shadow-sm hover:opacity-95 transition"
+          onClick={(e) => openInstagramReel(reel.instagramId || reel.id, reel.url, e)}
+          className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 px-3 py-2 text-xs font-bold text-white shadow-sm hover:opacity-95 transition cursor-pointer"
         >
           <Instagram size={14} />
           <span>Watch on Instagram</span>

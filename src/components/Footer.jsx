@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink, GraduationCap, Instagram, PhoneCall, Sparkles } from 'lucide-react';
 import { BRAND } from '../data/units';
 import { OFFICIAL_INSTAGRAM_PROFILE } from '../content/reelsLoader';
+import { openInstagramProfile } from '../utils/instagramDeepLink';
 import Card from './ui/Card';
 
 function Footer() {
@@ -31,7 +32,8 @@ function Footer() {
                 href={OFFICIAL_INSTAGRAM_PROFILE.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-xl border border-pink-500/40 bg-pink-500/10 px-3.5 py-2 font-bold text-pink-400 hover:bg-pink-500/20 transition shadow-sm"
+                onClick={(e) => openInstagramProfile('code_scholar_ai', OFFICIAL_INSTAGRAM_PROFILE.url, e)}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-pink-500/40 bg-pink-500/10 px-3.5 py-2 font-bold text-pink-400 hover:bg-pink-500/20 transition shadow-sm cursor-pointer"
               >
                 <Instagram size={14} />
                 <span>Follow {OFFICIAL_INSTAGRAM_PROFILE.handle}</span>

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getFeaturedMarkdownReel, OFFICIAL_INSTAGRAM_PROFILE } from '../content/reelsLoader';
+import { openInstagramReel } from '../utils/instagramDeepLink';
 
 function FeaturedReelHeroCard() {
   const reel = getFeaturedMarkdownReel();
@@ -164,6 +165,7 @@ function FeaturedReelHeroCard() {
                 href={reel.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => openInstagramReel(reel.instagramId || reel.id, reel.url, e)}
                 aria-label={`Watch ${reel.title} on Instagram`}
                 className="group/btn mx-auto grid h-20 w-20 place-items-center rounded-3xl border border-pink-500/40 bg-gradient-to-tr from-pink-600/30 via-purple-600/30 to-brand-primary/30 text-white shadow-glow transition-all duration-300 hover:scale-108 hover:border-pink-400 hover:bg-gradient-to-tr hover:from-pink-600 hover:to-purple-600 cursor-pointer"
               >
@@ -191,7 +193,8 @@ function FeaturedReelHeroCard() {
                 href={reel.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 px-4 py-2.5 text-xs font-bold text-white shadow-glow transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                onClick={(e) => openInstagramReel(reel.instagramId || reel.id, reel.url, e)}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 px-4 py-2.5 text-xs font-bold text-white shadow-glow transition-transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 <Instagram size={15} />
                 <span>Watch Featured Reel</span>

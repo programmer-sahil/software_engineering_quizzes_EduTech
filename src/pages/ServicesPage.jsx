@@ -34,6 +34,7 @@ import {
   getPublishedMarkdownReels,
   OFFICIAL_INSTAGRAM_PROFILE,
 } from '../content/reelsLoader';
+import { openInstagramProfile, openInstagramReel } from '../utils/instagramDeepLink';
 
 import project2 from '../../assets/projects/project2.jpg';
 import sahilMain from '../../assets/profile/sahil-main.jpg';
@@ -59,7 +60,19 @@ function ServicesPage() {
       {/* 1. HERO SECTION WITH HD VISUAL HERO BANNER */}
       <section className="section-shell">
         <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-brand-surface p-6 sm:p-10 lg:p-12 shadow-card">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+          {/* Subtle Atmospheric HD Tech Background */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+            <img
+              src="/assets/teaching/teaching5.jpg"
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover object-center opacity-[0.05] dark:opacity-[0.12] filter blur-[1px] scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-surface via-brand-surface/90 to-brand-surface/70" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-brand-primary/10 via-transparent to-transparent" />
+          </div>
+
+          <div className="relative z-10 grid gap-10 lg:grid-cols-12 lg:items-center">
             {/* Left Column: Headline & Value Proposition */}
             <div className="space-y-5 lg:col-span-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-pink-400">
@@ -184,67 +197,92 @@ function ServicesPage() {
 
       {/* 4. CODE SCHOLAR AI VIDEO DEMONSTRATIONS */}
       <section className="section-shell mt-16 sm:mt-24">
-        <div className="rounded-3xl border border-brand-border bg-brand-surface p-6 sm:p-10 shadow-card">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between border-b border-brand-border/60 pb-6 mb-8">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-pink-400">
-                <Video size={13} />
-                <span>Watch Video Demonstrations</span>
-              </div>
-              <h2 className="mt-3 font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-brand-heading">
-                Project &amp; Technology Micro-Lessons
-              </h2>
-              <p className="mt-1.5 max-w-2xl text-xs sm:text-sm leading-relaxed text-brand-body">
-                Watch concise video lessons explaining software architecture, artificial intelligence, and hardware
-                interfacing from Code Scholar AI.
-              </p>
-            </div>
-
-            <a
-              href={OFFICIAL_INSTAGRAM_PROFILE.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 px-4 py-2.5 text-xs font-bold text-white shadow-sm hover:opacity-95 transition"
-            >
-              <span>Follow @code_scholar_ai</span>
-              <ExternalLink size={13} />
-            </a>
+        <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-brand-surface p-6 sm:p-10 shadow-card">
+          {/* Atmospheric HD Tech Background */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+            <img
+              src="/assets/teaching/teaching8.jpg"
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover object-center opacity-[0.05] dark:opacity-[0.12] filter blur-[1px] scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-surface via-brand-surface/90 to-brand-surface/70" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent" />
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {demoReels.map((reel) => (
-              <div
-                key={reel.id}
-                onClick={() => setActiveModalReel(reel)}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-border bg-brand-elevated/40 p-4 transition-all duration-300 hover:border-brand-primary/50 hover:bg-brand-elevated/80 cursor-pointer"
+          <div className="relative z-10">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between border-b border-brand-border/60 pb-6 mb-8">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-pink-400">
+                  <Video size={13} />
+                  <span>Watch Video Demonstrations</span>
+                </div>
+                <h2 className="mt-3 font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-brand-heading">
+                  Project &amp; Technology Micro-Lessons
+                </h2>
+                <p className="mt-1.5 max-w-2xl text-xs sm:text-sm leading-relaxed text-brand-body">
+                  Watch concise video lessons explaining software architecture, artificial intelligence, and hardware
+                  interfacing from Code Scholar AI.
+                </p>
+              </div>
+
+              <a
+                href={OFFICIAL_INSTAGRAM_PROFILE.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => openInstagramProfile('code_scholar_ai', OFFICIAL_INSTAGRAM_PROFILE.url, e)}
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 px-4 py-2.5 text-xs font-bold text-white shadow-sm hover:opacity-95 transition cursor-pointer"
               >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span
-                      className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-[10px] font-bold ${
-                        reel.visualStyle?.badgeColor || 'text-brand-primary border-brand-primary/30 bg-brand-primary/10'
-                      }`}
-                    >
-                      {reel.category}
-                    </span>
-                    <span className="text-[10px] text-brand-muted font-semibold">60s Demo</span>
+                <span>Follow @code_scholar_ai</span>
+                <ExternalLink size={13} />
+              </a>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {demoReels.map((reel) => (
+                <div
+                  key={reel.id}
+                  onClick={() => setActiveModalReel(reel)}
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-border bg-brand-elevated/40 p-4 transition-all duration-300 hover:border-brand-primary/50 hover:bg-brand-elevated/80 cursor-pointer"
+                >
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span
+                        className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-[10px] font-bold ${
+                          reel.visualStyle?.badgeColor || 'text-brand-primary border-brand-primary/30 bg-brand-primary/10'
+                        }`}
+                      >
+                        {reel.category}
+                      </span>
+                      <span className="text-[10px] text-brand-muted font-semibold">60s Demo</span>
+                    </div>
+
+                    <h3 className="mt-3 font-display text-sm font-bold text-brand-heading line-clamp-2 group-hover:text-brand-primary transition-colors">
+                      {reel.title}
+                    </h3>
+
+                    <p className="mt-1.5 text-xs text-brand-muted line-clamp-2 leading-relaxed">
+                      {reel.description}
+                    </p>
                   </div>
 
-                  <h3 className="mt-3 font-display text-sm font-bold text-brand-heading line-clamp-2 group-hover:text-brand-primary transition-colors">
-                    {reel.title}
-                  </h3>
-
-                  <p className="mt-1.5 text-xs text-brand-muted line-clamp-2 leading-relaxed">
-                    {reel.description}
-                  </p>
+                  <div className="mt-4 pt-3 border-t border-brand-border/40 flex items-center justify-between text-xs font-semibold text-pink-400">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openInstagramReel(reel.instagramId || reel.id, reel.url, e);
+                      }}
+                      className="inline-flex items-center gap-1 hover:text-pink-300 transition cursor-pointer"
+                    >
+                      <span>Watch in App</span>
+                      <ExternalLink size={12} />
+                    </button>
+                    <span className="text-[11px] text-brand-muted">Preview</span>
+                  </div>
                 </div>
-
-                <div className="mt-4 pt-3 border-t border-brand-border/40 flex items-center justify-between text-xs font-semibold text-pink-400">
-                  <span>Watch Video Reel</span>
-                  <ExternalLink size={12} />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

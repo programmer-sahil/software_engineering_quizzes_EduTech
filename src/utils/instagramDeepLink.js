@@ -96,3 +96,4 @@ export function openInstagramProfile(username = 'code_scholar_ai', webUrl, e) {
     window.open(targetWebUrl, '_blank', 'noopener,noreferrer');
   }
 }
+

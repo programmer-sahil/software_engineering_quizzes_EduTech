@@ -19,6 +19,7 @@ import {
   REEL_CATEGORIES,
   getPublishedMarkdownReels,
 } from '../content/reelsLoader';
+import { openInstagramProfile } from '../utils/instagramDeepLink';
 
 function ReelsPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -57,8 +58,20 @@ function ReelsPage() {
         </nav>
 
         {/* Page Header Ribbon & Profile Banner */}
-        <div className="rounded-3xl border border-brand-border bg-brand-surface p-6 sm:p-10 shadow-card">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-brand-surface p-6 sm:p-10 shadow-card">
+          {/* Atmospheric HD Tech Background */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+            <img
+              src="/assets/teaching/teaching8.jpg"
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover object-center opacity-[0.05] dark:opacity-[0.12] filter blur-[1px] scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-surface via-brand-surface/90 to-brand-surface/70" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-pink-500/10 via-brand-primary/5 to-transparent" />
+          </div>
+
+          <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-pink-400">
                 <Instagram size={13} />
@@ -82,7 +95,8 @@ function ReelsPage() {
                 href={OFFICIAL_INSTAGRAM_PROFILE.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 px-5 py-3 text-xs sm:text-sm font-bold text-white shadow-glow hover:opacity-95 transition"
+                onClick={(e) => openInstagramProfile('code_scholar_ai', OFFICIAL_INSTAGRAM_PROFILE.url, e)}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 px-5 py-3 text-xs sm:text-sm font-bold text-white shadow-glow hover:opacity-95 transition cursor-pointer"
               >
                 <Instagram size={17} />
                 <span>Follow {OFFICIAL_INSTAGRAM_PROFILE.handle} on Instagram</span>

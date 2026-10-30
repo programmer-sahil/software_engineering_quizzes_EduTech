@@ -661,11 +661,62 @@ This is an overview paragraph.
   const progReels = getPublishedMarkdownReels({ category: 'Programming' });
   assert(progReels.length === 2, 'Category filter "Programming" returns 2 reels (Dbd0y4HzF2O & DeYlCfpyqvz)');
 
-  const searchResults = getPublishedMarkdownReels({ search: 'roadmap' });
-  assert(searchResults.length >= 1, 'Search query "roadmap" finds Career Roadmap reel');
+  const searchArduino = getPublishedMarkdownReels({ search: 'arduino' });
+  assert(searchArduino.length >= 1, 'Search query "arduino" finds Arduino & Microcontrollers reel');
+
+  const searchProtocols = getPublishedMarkdownReels({ search: 'protocols' });
+  assert(searchProtocols.length >= 1, 'Search query "protocols" finds Building Protocols reel');
 
   // 13.7 Verify Supported Categories
   assert(REEL_CATEGORIES.length === 8, 'REEL_CATEGORIES contains 8 items including "All Topics"');
+
+  // 13.8 Verify Verified Educational Reel Titles & Topics
+  const verifiedTitles = {
+    De1Dg5Myz9n: 'Meet Arduino — Brain Behind Countless IoT Innovations',
+    Dbd0y4HzF2O: 'Everyday IoT — Connected Tech You Use Without Realizing',
+    DcVVqenSObb: 'What Happens When Devices Connect to the Internet?',
+    DchPS_1zAGD: 'How Smart Devices Actually Work — Welcome to IoT',
+    DcrR81LzSxk: 'Sensors Detect. Actuators Act. Smart Systems Simplified',
+    DdUcOXqTTKy: 'Building Automation Protocols — Modbus, BACnet & KNX',
+    DeLApOByIQs: 'Wireless Communication Meets Wireless Power in Tech',
+    DeYlCfpyqvz: 'IoT vs M2M — Understanding the Key Differences',
+  };
+
+  for (const r of ALL_MARKDOWN_REELS) {
+    const key = r.id.replace(/-/g, '_');
+    const expected = verifiedTitles[key] || verifiedTitles[r.id];
+    if (expected) {
+      assert(r.title === expected, `Reel ${r.id} has verified authentic title: "${expected}"`);
+    } else {
+      assert(r.title && r.title.length > 5, `Reel ${r.id} has valid descriptive title`);
+    }
+  }
+
+  // --- 14. Mobile Instagram App Deep Linking Schemes ---
+  console.log('\n--- 14. Mobile Instagram App Deep Linking Schemes ---');
+  const {
+    getInstagramReelAppUrl,
+    getInstagramProfileAppUrl,
+    isMobileDevice,
+    openInstagramReel,
+    openInstagramProfile,
+  } = await import('../src/utils/instagramDeepLink.js');
+
+  assert(
+    getInstagramReelAppUrl('De1Dg5Myz9n') === 'instagram://reel?id=De1Dg5Myz9n',
+    'Reel deep link schema formats as instagram://reel?id=De1Dg5Myz9n'
+  );
+  assert(
+    getInstagramReelAppUrl('') === 'instagram://',
+    'Empty shortcode returns base instagram:// scheme'
+  );
+  assert(
+    getInstagramProfileAppUrl('code_scholar_ai') === 'instagram://user?username=code_scholar_ai',
+    'Profile deep link formats as instagram://user?username=code_scholar_ai'
+  );
+  assert(typeof isMobileDevice === 'function', 'isMobileDevice detector is exported as a function');
+  assert(typeof openInstagramReel === 'function', 'openInstagramReel is exported as a function');
+  assert(typeof openInstagramProfile === 'function', 'openInstagramProfile is exported as a function');
 
   console.log('\n======================================================');
   console.log(`📊 TEST RESULTS: ${passes} PASSED | ${fails} FAILED`);

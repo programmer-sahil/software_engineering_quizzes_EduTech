@@ -14,6 +14,18 @@ function HeroSection() {
 
   return (
     <section className="relative overflow-hidden pt-8 sm:pt-14 lg:pt-16 pb-10 sm:pb-16">
+      {/* Atmospheric HD Background Image with darkened gradient vignette */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+        <img
+          src="/assets/teaching/teaching8.jpg"
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full object-cover object-center opacity-[0.06] dark:opacity-[0.14] filter blur-[1px] scale-105 transition-transform duration-1000"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/40 via-transparent to-brand-bg" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-brand-primary/10 via-transparent to-transparent" />
+      </div>
+
       {/* Subtle ambient lighting grid overlay */}
       <div className="absolute inset-0 grid-overlay opacity-20 pointer-events-none" />
 

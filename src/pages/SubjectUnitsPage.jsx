@@ -199,8 +199,21 @@ function SubjectUnitsPage({ subjectId = 'iot' }) {
     <PageTransition>
       {/* Subject Header & Course Objectives */}
       <section className="section-shell pt-10 sm:pt-14">
-        <Card hover={false} className="p-6 sm:p-10 border-brand-primary/35 shadow-card">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+        <Card hover={false} className="relative overflow-hidden p-6 sm:p-10 border-brand-primary/35 shadow-card">
+          {/* Subtle Atmospheric HD Tech Background */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+            <img
+              src={teaching8}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover object-center opacity-[0.05] dark:opacity-[0.12] filter blur-[1px] scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-surface via-brand-surface/90 to-brand-surface/70" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-primary/10 via-transparent to-transparent" />
+          </div>
+
+          <div className="relative z-10">
+            <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2">
               <Badge variant="primary" icon={<Cpu size={12} />}>
                 {subject.semester}
@@ -261,6 +274,7 @@ function SubjectUnitsPage({ subjectId = 'iot' }) {
             <span>{counts.totalMarks} Total Marks</span>
             <span>•</span>
             <span className="text-brand-coral font-bold">{counts.totalPYQs} Verified PYQs Ready</span>
+          </div>
           </div>
         </Card>
       </section>

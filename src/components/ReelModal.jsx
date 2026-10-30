@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Instagram, X } from 'lucide-react';
 import Button from './ui/Button';
+import { openInstagramReel } from '../utils/instagramDeepLink';
 
 function ReelModal({ reel, isOpen, onClose }) {
   // Close on Escape key
@@ -85,7 +86,8 @@ function ReelModal({ reel, isOpen, onClose }) {
               href={reel.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 px-3.5 py-2 text-xs font-bold text-white shadow-sm hover:opacity-95 transition"
+              onClick={(e) => openInstagramReel(reel.instagramId || reel.id, reel.url, e)}
+              className="shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 px-3.5 py-2 text-xs font-bold text-white shadow-sm hover:opacity-95 transition cursor-pointer"
             >
               <span>Instagram</span>
               <ExternalLink size={12} />
