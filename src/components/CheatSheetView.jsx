@@ -13,48 +13,20 @@ import {
   Sparkles,
   Table,
   Tag,
+  ShieldCheck,
 } from 'lucide-react';
 import Button from './ui/Button';
 import { calculateReadingTime } from '../content/cheatSheetNormalizer';
 
 /**
- * Copy Code Button with visual feedback
+ * Protected Code Indicator (Anti-Copy Protection)
  */
-function CopyCodeButton({ code }) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async (e) => {
-    e.stopPropagation();
-    try {
-      await navigator.clipboard.writeText(code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // Fallback
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
-
+function ProtectedCodeIndicator() {
   return (
-    <button
-      type="button"
-      onClick={handleCopy}
-      className="inline-flex items-center gap-1.5 rounded-lg border border-brand-border/80 bg-brand-elevated/80 px-2.5 py-1 text-xs font-medium text-brand-body hover:border-brand-primary hover:text-brand-primary transition"
-      title="Copy code to clipboard"
-    >
-      {copied ? (
-        <>
-          <Check size={12} className="text-emerald-400" />
-          <span className="text-emerald-400 font-semibold">Copied!</span>
-        </>
-      ) : (
-        <>
-          <Copy size={12} />
-          <span>Copy Code</span>
-        </>
-      )}
-    </button>
+    <span className="inline-flex items-center gap-1.5 rounded-lg border border-brand-border/80 bg-brand-elevated/80 px-2.5 py-1 text-xs font-medium text-brand-muted select-none">
+      <ShieldCheck size={12} className="text-brand-primary" />
+      <span>Protected Snippet</span>
+    </span>
   );
 }
 
@@ -115,7 +87,7 @@ function CodeBlockRenderer({ codeBlock }) {
           <Code2 size={13} />
           <span>{codeBlock.language || 'Code'}</span>
         </div>
-        <CopyCodeButton code={codeBlock.code} />
+        <ProtectedCodeIndicator />
       </div>
       <pre className="p-4 overflow-x-auto text-xs font-mono leading-relaxed text-brand-heading">
         <code>{codeBlock.code}</code>
@@ -211,15 +183,10 @@ function CheatSheetView({ sections = [], unitTitle = 'Unit Cheat Sheet', unitId 
               </Button>
             )}
 
-            <Button
-              variant="secondary"
-              size="sm"
-              icon={<Printer size={14} />}
-              onClick={handlePrint}
-              title="Print sheet or save as PDF"
-            >
-              Print Sheet
-            </Button>
+            <span className="inline-flex items-center gap-1.5 rounded-xl border border-brand-border bg-brand-elevated px-3 py-1.5 text-xs font-semibold text-brand-muted select-none">
+              <ShieldCheck size={13} className="text-emerald-400" />
+              <span>Protected Notes</span>
+            </span>
           </div>
         </div>
 

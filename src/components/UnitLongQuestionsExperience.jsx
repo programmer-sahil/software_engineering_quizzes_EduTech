@@ -21,6 +21,7 @@ import {
   Search,
   Sparkles,
   Tag,
+  ShieldCheck,
   X,
   ArrowLeft,
   ArrowRight,
@@ -652,25 +653,12 @@ function UnitLongQuestionsExperience({
                           </div>
                         )}
 
-                        {/* Bottom Action Footer: Copy Answer & Toggle Revision */}
+                        {/* Bottom Action Footer: Protected Status & Toggle Revision */}
                         <div className="pt-3 border-t border-brand-border/40 flex flex-wrap items-center justify-between gap-3 text-xs">
-                          <button
-                            type="button"
-                            onClick={() => handleCopyAnswer(q)}
-                            className="inline-flex items-center gap-1.5 rounded-lg border border-brand-border bg-brand-elevated px-2.5 py-1 text-xs font-semibold text-brand-body hover:text-brand-heading hover:border-brand-border-hover transition"
-                          >
-                            {isCopied ? (
-                              <>
-                                <Check size={13} className="text-emerald-400" />
-                                <span className="text-emerald-400">Copied to Clipboard!</span>
-                              </>
-                            ) : (
-                              <>
-                                <Copy size={13} />
-                                <span>Copy Answer</span>
-                              </>
-                            )}
-                          </button>
+                          <span className="inline-flex items-center gap-1.5 rounded-lg border border-brand-border bg-brand-elevated/70 px-2.5 py-1 text-xs font-semibold text-brand-muted select-none">
+                            <ShieldCheck size={13} className="text-brand-primary" />
+                            <span>Protected Answer</span>
+                          </span>
 
                           <button
                             type="button"
@@ -889,14 +877,10 @@ function UnitLongQuestionsExperience({
                         </button>
                       </div>
 
-                      <button
-                        type="button"
-                        onClick={() => handleCopyAnswer(currentPracticeQuestion)}
-                        className="inline-flex items-center gap-1 text-xs text-brand-muted hover:text-brand-primary transition"
-                      >
-                        <Copy size={12} />
-                        <span>{copiedId === currentPracticeQuestion.id ? 'Copied!' : 'Copy Answer'}</span>
-                      </button>
+                      <span className="inline-flex items-center gap-1 text-xs text-brand-muted select-none">
+                        <ShieldCheck size={12} className="text-brand-primary" />
+                        <span>Protected Solution</span>
+                      </span>
                     </div>
                   </motion.div>
                 )}

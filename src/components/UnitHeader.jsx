@@ -11,6 +11,7 @@ import {
   Layers,
   Printer,
   Share2,
+  ShieldCheck,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button, Card, ShowMoreText } from './ui';
@@ -177,16 +178,13 @@ function UnitHeader({
                 <span>{copied ? 'Copied' : 'Share'}</span>
               </button>
 
-              <button
-                type="button"
-                onClick={handlePrint}
-                aria-label="Print summary"
-                title="Print"
-                className="inline-flex h-8 items-center gap-1 rounded-lg border border-brand-border bg-brand-elevated px-2.5 text-xs text-brand-body hover:text-brand-heading transition"
+              <span
+                title="Protected educational material"
+                className="inline-flex h-8 items-center gap-1 rounded-lg border border-brand-border bg-brand-elevated/70 px-2.5 text-xs text-brand-muted select-none"
               >
-                <Printer size={13} />
-                <span>Print</span>
-              </button>
+                <ShieldCheck size={13} className="text-emerald-400" />
+                <span>Protected</span>
+              </span>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import ErrorBoundary from './components/ErrorBoundary';
+import ContentProtection from './components/ContentProtection';
 import HomePage from './pages/HomePage';
 import UnitPage from './pages/UnitPage';
 import SubjectsPage from './pages/SubjectsPage';
@@ -31,6 +32,7 @@ function App() {
     <div className="relative min-h-screen bg-brand-canvas font-body text-brand-body transition-colors duration-200">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-mesh-dark dark:opacity-100 opacity-60 transition-opacity" />
       <ScrollToTop />
+      <ContentProtection />
       <Navbar theme={theme} onThemeToggle={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))} />
       <ErrorBoundary>
         <AnimatePresence mode="wait">
