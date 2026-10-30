@@ -90,7 +90,7 @@ function MarkdownTableRenderer({ table }) {
                       cellIdx === 0 ? 'font-semibold text-brand-heading' : ''
                     }`}
                   >
-                    {cell.replace(/\*\*/g, '')}
+                    {String(cell ?? '').replace(/\*\*/g, '')}
                   </td>
                 ))}
               </tr>
@@ -230,6 +230,7 @@ function CheatSheetView({ sections = [], unitTitle = 'Unit Cheat Sheet', unitId 
           const isRevised = Boolean(revisedMap[sectionId]);
 
           const readingTime = section.readingTime || calculateReadingTime(section.rawContent || '');
+          const readingTimeText = typeof readingTime === 'string' ? readingTime : readingTime?.text || '2 min read';
 
           return (
             <motion.article
@@ -272,7 +273,7 @@ function CheatSheetView({ sections = [], unitTitle = 'Unit Cheat Sheet', unitId 
                   <div className="flex items-center gap-3">
                     <span className="inline-flex items-center gap-1 text-xs text-brand-muted">
                       <Clock size={12} />
-                      <span>{readingTime.text}</span>
+                      <span>{readingTimeText}</span>
                     </span>
 
                     <button
@@ -351,7 +352,7 @@ function CheatSheetView({ sections = [], unitTitle = 'Unit Cheat Sheet', unitId 
                       {/* Paragraphs */}
                       {section.paragraphs?.map((p, pIdx) => (
                         <p key={pIdx} className="text-xs sm:text-sm leading-relaxed text-brand-body">
-                          {p.replace(/\*\*/g, '')}
+                          {String(p ?? '').replace(/\*\*/g, '')}
                         </p>
                       ))}
 
@@ -361,7 +362,7 @@ function CheatSheetView({ sections = [], unitTitle = 'Unit Cheat Sheet', unitId 
                           {section.points.map((point, ptIdx) => (
                             <li key={ptIdx} className="flex items-start gap-2.5">
                               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
-                              <span>{point.replace(/\*\*/g, '')}</span>
+                              <span>{String(point ?? '').replace(/\*\*/g, '')}</span>
                             </li>
                           ))}
                         </ul>

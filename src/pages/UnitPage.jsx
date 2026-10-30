@@ -6,6 +6,7 @@ import {
   BookOpen,
   BookOpenText,
   Clock,
+  Cpu,
   FileBadge2,
   FileQuestion,
   HelpCircle,

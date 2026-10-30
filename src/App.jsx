@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
+import ErrorBoundary from './components/ErrorBoundary';
 import HomePage from './pages/HomePage';
 import UnitPage from './pages/UnitPage';
 import SubjectsPage from './pages/SubjectsPage';
@@ -31,23 +32,25 @@ function App() {
       <div className="pointer-events-none fixed inset-0 -z-10 bg-mesh-dark dark:opacity-100 opacity-60 transition-opacity" />
       <ScrollToTop />
       <Navbar theme={theme} onThemeToggle={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))} />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/subjects" element={<SubjectsPage />} />
-          <Route path="/practice" element={<PracticePage />} />
-          <Route path="/cheat-sheets" element={<Navigate to="/subjects" replace />} />
-          <Route path="/reels" element={<ReelsPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/software-engineering" element={<SubjectUnitsPage subjectId="software-engineering" />} />
-          <Route path="/iot" element={<SubjectUnitsPage subjectId="iot" />} />
-          <Route path="/software-engineering/unit/:unitId" element={<UnitPage subjectId="software-engineering" />} />
-          <Route path="/iot/unit/:unitId" element={<UnitPage subjectId="iot" />} />
-          <Route path="/iot/unit/1/long-questions" element={<IotLongQuestionsPage />} />
-          <Route path="/unit/:unitId" element={<UnitPage subjectId="software-engineering" />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </AnimatePresence>
+      <ErrorBoundary>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/subjects" element={<SubjectsPage />} />
+            <Route path="/practice" element={<PracticePage />} />
+            <Route path="/cheat-sheets" element={<Navigate to="/subjects" replace />} />
+            <Route path="/reels" element={<ReelsPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/software-engineering" element={<SubjectUnitsPage subjectId="software-engineering" />} />
+            <Route path="/iot" element={<SubjectUnitsPage subjectId="iot" />} />
+            <Route path="/software-engineering/unit/:unitId" element={<UnitPage subjectId="software-engineering" />} />
+            <Route path="/iot/unit/:unitId" element={<UnitPage subjectId="iot" />} />
+            <Route path="/iot/unit/1/long-questions" element={<IotLongQuestionsPage />} />
+            <Route path="/unit/:unitId" element={<UnitPage subjectId="software-engineering" />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </AnimatePresence>
+      </ErrorBoundary>
       <Footer />
       <WhatsAppFloatingButton />
     </div>
