@@ -9,13 +9,15 @@ import project3 from '../../assets/projects/project3.jpg';
 import project4 from '../../assets/projects/project4.jpg';
 import project5 from '../../assets/projects/project5.jpg';
 import project6 from '../../assets/projects/project6.jpg';
+import sensorCircuitImg from '../../assets/hardware/sensor-circuit.jpg';
+import embeddedLabImg from '../../assets/hardware/embedded-lab.jpg';
 
 export const SHOWCASE_PROJECTS = [
   {
     id: 'proj-01',
     title: 'IoT Environmental Automation & Gas Detection System',
     domain: 'Internet of Things',
-    image: project1,
+    image: sensorCircuitImg,
     description:
       'Real-time environmental telemetry device using ESP32/Arduino with MQ-2 gas and DHT11 sensors, automated cooling relay actuation, and MQTT cloud monitoring.',
     fullDescription:
@@ -72,7 +74,7 @@ export const SHOWCASE_PROJECTS = [
     id: 'proj-04',
     title: 'Smart Industrial Energy Metering & Power Management',
     domain: 'IoT & Industrial Automation',
-    image: project4,
+    image: embeddedLabImg,
     description:
       'Connected energy metering device logging electrical power consumption in real-time, detecting overload faults, and transmitting telemetry over Modbus RS-485.',
     fullDescription:

@@ -38,6 +38,7 @@ import { openInstagramProfile, openInstagramReel } from '../utils/instagramDeepL
 
 import project2 from '../../assets/projects/project2.jpg';
 import sahilMain from '../../assets/profile/sahil-main.jpg';
+import embeddedLabImg from '../../assets/hardware/embedded-lab.jpg';
 
 const heroBadges = [
   'Final-Year Major Projects',
@@ -127,7 +128,7 @@ function ServicesPage() {
             <div className="lg:col-span-5">
               <div className="group relative overflow-hidden rounded-3xl border border-brand-border/80 bg-slate-950 shadow-card aspect-[4/3] sm:aspect-[16/11]">
                 <img
-                  src={project2}
+                  src={embeddedLabImg}
                   alt="Full-Stack and IoT Project Development"
                   loading="lazy"
                   className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"

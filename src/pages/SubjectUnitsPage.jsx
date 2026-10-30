@@ -20,6 +20,8 @@ import { getSubject, getSubjectCounts } from '../content';
 import { getServicesWhatsAppLink } from '../data/services';
 import project1 from '../../assets/projects/project1.jpg';
 import teaching8 from '../../assets/teaching/teaching8.jpg';
+import sensorCircuitImg from '../../assets/hardware/sensor-circuit.jpg';
+import embeddedLabImg from '../../assets/hardware/embedded-lab.jpg';
 
 const seUnitCheatSheetsSummary = [
   { unitId: '1', title: 'Unit 1: Introduction to Software Engineering', count: 4, focus: 'Layered technology, CMMI, process frameworks' },
@@ -311,7 +313,7 @@ function SubjectUnitsPage({ subjectId = 'iot' }) {
             <div className="lg:col-span-5 grid grid-cols-2 gap-3.5">
               <figure className="group relative overflow-hidden rounded-2xl border border-brand-border bg-slate-950 aspect-[4/3]">
                 <img
-                  src={project1}
+                  src={sensorCircuitImg}
                   alt="IoT Hardware Breadboard Setup with Sensors"
                   loading="lazy"
                   className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
@@ -324,7 +326,7 @@ function SubjectUnitsPage({ subjectId = 'iot' }) {
 
               <figure className="group relative overflow-hidden rounded-2xl border border-brand-border bg-slate-950 aspect-[4/3]">
                 <img
-                  src={teaching8}
+                  src={embeddedLabImg}
                   alt="Practical Embedded Hardware Lab Session"
                   loading="lazy"
                   className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"

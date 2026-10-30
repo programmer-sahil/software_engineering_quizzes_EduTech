@@ -20,9 +20,8 @@ import LongQuestionsPlaceholder from '../components/LongQuestionsPlaceholder';
 import CheatSheetView from '../components/CheatSheetView';
 import { Card, Badge, Button, Tabs, EmptyState, Accordion, ShowMoreText } from '../components/ui';
 import { getSubjectUnit } from '../content';
-import project1 from '../../assets/projects/project1.jpg';
-import project4 from '../../assets/projects/project4.jpg';
-import teaching8 from '../../assets/teaching/teaching8.jpg';
+import sensorCircuitImg from '../../assets/hardware/sensor-circuit.jpg';
+import embeddedLabImg from '../../assets/hardware/embedded-lab.jpg';
 
 function UnitPage({ subjectId = 'iot' }) {
   const { unitId } = useParams();
@@ -305,14 +304,14 @@ function UnitPage({ subjectId = 'iot' }) {
                       <div className="sm:col-span-5">
                         <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-brand-border bg-slate-950">
                           <img
-                            src={unit.id === '5' ? teaching8 : unit.id === '1' ? project1 : project4}
+                            src={unit.id === '5' ? sensorCircuitImg : embeddedLabImg}
                             alt="Practical IoT Lab Hardware Setup"
                             loading="lazy"
                             className="h-full w-full object-cover object-center"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
                           <span className="absolute bottom-2 left-2 text-[10px] font-bold text-white bg-black/60 px-2 py-0.5 rounded backdrop-blur-md">
-                            HD Lab Visual
+                            {unit.id === '5' ? 'Arduino Breadboard Setup' : 'Embedded Systems Lab'}
                           </span>
                         </div>
                       </div>
